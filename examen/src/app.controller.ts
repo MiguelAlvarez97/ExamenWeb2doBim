@@ -10,3 +10,10 @@ export class AppController {
     return this.appService.root();
   }
 }
+export interface Usuario {
+    id?: number;
+    username: string;
+    password:string;
+    tipo:string;
+    restaurant: string;
+}
