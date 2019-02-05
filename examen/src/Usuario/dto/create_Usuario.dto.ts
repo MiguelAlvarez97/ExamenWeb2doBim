@@ -40,7 +40,7 @@ export class CreateUsuarioDto {
         message: "La contraseña debe tener MAXIMO de 16 caracteres"
     })
     @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,16}$/,{
-        message: "sadasdasdasd"
+        message: "Contrase;a Invalida"
     })
     password: string;
 
@@ -48,5 +48,6 @@ export class CreateUsuarioDto {
     @IsString()
     @IsDate()
     fechaNacimiento: string;
+
 
 }
