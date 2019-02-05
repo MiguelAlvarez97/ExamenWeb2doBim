@@ -12,8 +12,11 @@ export class AppController {
 }
 export interface Usuario {
     id?: number;
-    username: string;
+    nombre:string;
+    apellido:string;
+    email: string;
     password:string;
-    tipo:string;
-    restaurant: string;
+    fechaNacimiento:string;
+    //tipo:string;
+    //restaurant: string;
 }

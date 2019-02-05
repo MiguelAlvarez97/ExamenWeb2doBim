@@ -5,6 +5,9 @@ import {UsuarioEntity} from "../Usuario/Usuario.entity";
 @Entity('rolUsuario')
 export class rolUsuarioEntity {
 
+    @PrimaryGeneratedColumn()
+    idRol_Usr:number;
+
     @Column({
         name: 'id-usuario',
         type: 'varchar',

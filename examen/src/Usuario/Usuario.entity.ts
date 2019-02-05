@@ -35,6 +35,13 @@ export class UsuarioEntity {
     })
     password: string;
 
+    @Column({
+        name: 'fechaNacimiento',
+        type: 'date',
+        length: 15
+    })
+    fechaNacimiento: string;
+
     @OneToMany(
         type => rolUsuarioEntity,  // Que tabla vamos a relacionar
         rolUsuario => rolUsuario.roles  // Campo que hace referencia FK
