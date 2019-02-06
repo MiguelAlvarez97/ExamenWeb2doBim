@@ -8,8 +8,31 @@ import {Usuario} from "../app.controller";
 
 @Injectable()
 export class UsuarioService {
-    arreglo: Usuario[]=[];
-
+     arreglo: Usuario[] = [
+        {
+            id: 1,
+            nombre: 'A',
+            apellido: 'Descripcion de a',
+            email: 'string',
+            password:'string',
+            fechaNacimiento:'string',
+        },
+        {
+            id: 2,
+            nombre: 'A',
+            apellido: 'Descripcion de a',
+            email: 'string',
+            password:'string',
+            fechaNacimiento:'string',        },
+        {
+            id: 3,
+            nombre: 'A',
+            apellido: 'Descripcion de a',
+            email: 'string',
+            password:'string',
+            fechaNacimiento:'string',
+        }
+    ];
     // Inyectar las dependencias
     constructor(
         @InjectRepository(UsuarioEntity)
@@ -20,6 +43,17 @@ export class UsuarioService {
     buscar(parametrosBusqueda?: FindManyOptions<UsuarioEntity>)
         : Promise<UsuarioEntity[]> {
         return this._usuarioRepository.find(parametrosBusqueda);
+    }
+
+    crear(usuario: Usuario): Promise<UsuarioEntity> {
+
+        // Metodo Create es como un CONSTRUCTOR de la ENTIDAD
+        const usuarioEntity: UsuarioEntity = this._usuarioRepository
+            .create(usuario);
+
+        // Metodo Save Guarda en la BDD
+        return this._usuarioRepository.save(usuarioEntity);
+
     }
 
     eliminar(idUsuario: number): Promise<UsuarioEntity> {
@@ -45,16 +79,6 @@ export class UsuarioService {
         return this._usuarioRepository.findOne(id);
     }
 
-    crear(usuario: Usuario): Promise<UsuarioEntity> {
-
-        // Metodo Create es como un CONSTRUCTOR de la ENTIDAD
-        const usuarioEntity: UsuarioEntity = this._usuarioRepository
-            .create(usuario);
-
-        // Metodo Save Guarda en la BDD
-        return this._usuarioRepository.save(usuarioEntity);
-
-    }
     async autenticar(username: string,
                      password: string): Promise<boolean> {
         // Password encriptada

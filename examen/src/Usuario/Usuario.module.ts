@@ -1,4 +1,5 @@
 import {Module} from "@nestjs/common";
+import{UsuarioController} from "./Usuario.controller";
 import {UsuarioService} from "./Usuario.service";
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {UsuarioEntity} from "./usuario.entity";
@@ -9,6 +10,9 @@ import {UsuarioEntity} from "./usuario.entity";
             .forFeature([
                 UsuarioEntity
             ])
+    ],
+    controllers: [
+        UsuarioController
     ],
     providers: [
         UsuarioService

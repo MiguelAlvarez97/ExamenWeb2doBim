@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login Pokemon</title>
+    <link rel="stylesheet" href="./css/estiloslogin.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+<div class="login-box">
+    <img src="./img/logo.png" class="avatar" alt="Avatar Image">
+    <h1>Inicio de Sesion</h1>
+    <form action="/login"
+          method="post" >
+        <!-- USERNAME INPUT -->
+        <label for="username">E-mail</label>
+        <input id="username" type="text" name="username" placeholder="Ingrese su correo">
+        <!-- PASSWORD INPUT -->
+        <label for="password">Clave</label>
+        <input id="password" name="password" type="password" placeholder="Ingrese su clave">
+        <!--<input type="submit" value="Log In">-->
+        <button class="login">Login</button>
+        <a href="#">Registro</a>
+    </form>
+</div>
+</body>
+</html>

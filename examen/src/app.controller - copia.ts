@@ -1,29 +1,18 @@
 import {Headers, Get, Controller, HttpCode, InternalServerErrorException, Post,
     Query, Param, Body, Head, UnauthorizedException, Req, Res, Session
 } from '@nestjs/common';
-import {AppService} from './app.service';
 import {Observable, of} from "rxjs";
 import {Request, Response} from "express";
-//import {UsuarioService} from "./usuario/Usuario.service";
-import {UsuarioService} from "./Usuario/Usuario.service";
+import { AppService } from './app.service';
+import { UsuarioService } from './Usuario/Usuario.service';
 
-@Controller()  //decoradores
-// Controller('usuario')
-// http://localhost:3000/usuario
+
+@Controller()
 export class AppController {
+  constructor(private readonly _appService: AppService,
+              //private readonly _noticiaService: NoticiaService,
+              private readonly _usuarioService: UsuarioService) {}
 
-
-    // public servicio:AppService;
-    constructor(private readonly _appService: AppService,
-                //private readonly _noticiaService: NoticiaService,
-                private readonly _usuarioService: UsuarioService) {  // NO ES UN CONSTRUCTOR
-        // this.servicio = servicio;
-    }
-
-
-    @Get() // http://ip:puerto
-    // @Get('crear')
-    // http://localhost:3000/usuario/crear?nombre=Adrian
     @HttpCode(204) // status
     raiz(
         @Query() todosQueryParams: any,  //{nombre:"Adrian"}
@@ -138,7 +127,6 @@ export class AppController {
 
     }
 
-
     // app.controller.ts
     @Get('login')
     mostrarLogin(
@@ -150,19 +138,19 @@ export class AppController {
     @Post('login')
     @HttpCode(200)
     async ejecutarLogin(
-        @Body('email') email: string,
+        @Body('username') username: string,
         @Body('password') password: string,
         @Res() res,
         @Session() sesion
     ) {
         const respuesta = await this._usuarioService
-            .autenticar(email, password);
+            .autenticar(username, password);
 
         console.log(sesion);
 
         if (respuesta) {
-            sesion.usuario = email;
-            res.redirect('usuario/inicio');
+            sesion.usuario = username;
+            res.redirect('noticia/inicio');
         } else {
             res.redirect('login');
         }
@@ -179,23 +167,14 @@ export class AppController {
         sesion.destroy();
         res.redirect('login');
     }
-
-
 }
-
-
 export interface Usuario {
     id?: number;
     nombre:string;
     apellido:string;
     email: string;
     password:string;
-    fechaNacimiento:string
-
+    fechaNacimiento:string;
+    //tipo:string;
+    //restaurant: string;
 }
-/*
-export interface Noticia {
-    id?: number;
-    titulo: string;
-    descripcion: string;
-}*/

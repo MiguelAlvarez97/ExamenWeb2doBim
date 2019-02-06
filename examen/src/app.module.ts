@@ -12,12 +12,12 @@ import {rolUsuarioEntity} from "./RolesPorUsuario/RolesPorUsuario.entity";
       {
           type: 'mysql',
           host: '192.168.99.100',
-          port: 32787,
+          port: 32791,
           database: 'entrenador',
           username: 'edison',
           password: '123456',
           synchronize: true,
-          dropSchema: false,
+          dropSchema: true,
           entities: [
               UsuarioEntity,
               RolEntity,
@@ -25,7 +25,9 @@ import {rolUsuarioEntity} from "./RolesPorUsuario/RolesPorUsuario.entity";
               //UsuarioEntity
           ]
       }
-  ),],
+  ),
+  UsuarioModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

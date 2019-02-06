@@ -1,12 +1,13 @@
-import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, Index, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {rolUsuarioEntity} from "../RolesPorUsuario/RolesPorUsuario.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {
 
     @PrimaryGeneratedColumn()
-    idUsr: number;
-
+    //@Column()
+    id: number;
+    @Index()
     @Column({
         name: 'nombre_usuario',
         type: 'varchar',
@@ -37,7 +38,7 @@ export class UsuarioEntity {
 
     @Column({
         name: 'fechaNacimiento',
-        type: 'date',
+        type: 'varchar',
         length: 15
     })
     fechaNacimiento: string;
