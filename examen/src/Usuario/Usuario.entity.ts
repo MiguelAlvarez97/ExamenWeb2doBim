@@ -23,7 +23,7 @@ export class UsuarioEntity {
     apellido: string;
 
     @Column({
-        name: 'e-mail',
+        name: 'email',
         type: 'varchar',
         length: 30
     })
@@ -42,10 +42,10 @@ export class UsuarioEntity {
         length: 15
     })
     fechaNacimiento: string;
-
+/*
     @OneToMany(
         type => rolUsuarioEntity,  // Que tabla vamos a relacionar
         rolUsuario => rolUsuario.roles  // Campo que hace referencia FK
     )
-    rolUsr: rolUsuarioEntity[];
+    rolUsr: rolUsuarioEntity[];*/
 }

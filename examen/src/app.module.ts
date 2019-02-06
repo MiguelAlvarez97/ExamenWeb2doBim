@@ -1,18 +1,21 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import {TypeOrmModule} from '@nestjs/typeorm';
+import{UsuarioEntity} from "./Usuario/Usuario.entity";
 import {UsuarioModule} from "./Usuario/Usuario.module";
-import {UsuarioEntity} from "./Usuario/Usuario.entity";
 import {RolEntity} from "./Rol/Rol.entity";
 import {rolUsuarioEntity} from "./RolesPorUsuario/RolesPorUsuario.entity";
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {RolModule} from "./Rol/Rol.module";
+import {RolUsuarioModule} from "./RolesPorUsuario/RolesPorUsuario.module";
 
 @Module({
-  imports: [TypeOrmModule.forRoot(
+  imports: [
+      TypeOrmModule.forRoot(
       {
           type: 'mysql',
           host: '192.168.99.100',
-          port: 32791,
+          port: 32769,
           database: 'entrenador',
           username: 'edison',
           password: '123456',
@@ -21,14 +24,19 @@ import {rolUsuarioEntity} from "./RolesPorUsuario/RolesPorUsuario.entity";
           entities: [
               UsuarioEntity,
               RolEntity,
-              rolUsuarioEntity,
-              //UsuarioEntity
+              rolUsuarioEntity
           ]
       }
   ),
-  UsuarioModule
+  UsuarioModule,
+      RolModule,
+      RolUsuarioModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [
+      AppController
+  ],
+  providers: [
+      AppService
+  ],
 })
 export class AppModule {}

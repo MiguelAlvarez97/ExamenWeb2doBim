@@ -50,10 +50,13 @@ export class UsuarioController {
             const consulta: FindManyOptions<UsuarioEntity> = {
                 where: [
                     {
-                        username: Like(`%${busqueda}%`)
+                        email: Like(`%${busqueda}%`)
                     },
                     {
-                        restaurant: Like(`%${busqueda}%`)
+                        nombre: Like(`%${busqueda}%`)
+                    },
+                    {
+                        apellido: Like(`%${busqueda}%`)
                     }
                 ]
             };

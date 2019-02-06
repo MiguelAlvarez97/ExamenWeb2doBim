@@ -21,17 +21,17 @@ export class rolUsuarioEntity {
         length: 40
     })
     idRol: string;
-
-    @ManyToOne(
+/*
+    @OneToMany(
         type => RolEntity,  // Tipo tabla
         rol => rol.RolesUsr
     )
-    roles: RolEntity;
+    roles: RolEntity[];
 
     @ManyToOne(
         type => UsuarioEntity,
         usuario => usuario.rolUsr
     )
     usuarios: UsuarioEntity[]
-
+*/
 }

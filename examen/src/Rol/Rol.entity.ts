@@ -5,15 +5,15 @@ import{rolUsuarioEntity} from "../RolesPorUsuario/RolesPorUsuario.entity"
 export class RolEntity {
 
     @PrimaryGeneratedColumn()
-    idRol: number;
+    rolId: number;
 
     @Column()
     tipoRol: string;
-
+/*
     @OneToMany(
         type => rolUsuarioEntity,  // Que tabla vamos a relacionar
         rolUsuario => rolUsuario.roles  // Campo que hace referencia FK
     )
     RolesUsr: rolUsuarioEntity[];
-
+*/
 }

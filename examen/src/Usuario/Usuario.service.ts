@@ -1,38 +1,14 @@
 import {Injectable} from "@nestjs/common";
 import {InjectRepository} from "@nestjs/typeorm";
 import {FindManyOptions, FindOneOptions, Repository} from "typeorm";
-import {UsuarioEntity} from "./usuario.entity";
 import {Usuario} from "../app.controller";
+import {UsuarioEntity} from "./Usuario.entity";
 
 //import {NoticiaEntity} from "../noticia/noticia-entity";
 
 @Injectable()
 export class UsuarioService {
-     arreglo: Usuario[] = [
-        {
-            id: 1,
-            nombre: 'A',
-            apellido: 'Descripcion de a',
-            email: 'string',
-            password:'string',
-            fechaNacimiento:'string',
-        },
-        {
-            id: 2,
-            nombre: 'A',
-            apellido: 'Descripcion de a',
-            email: 'string',
-            password:'string',
-            fechaNacimiento:'string',        },
-        {
-            id: 3,
-            nombre: 'A',
-            apellido: 'Descripcion de a',
-            email: 'string',
-            password:'string',
-            fechaNacimiento:'string',
-        }
-    ];
+     /*arreglo: Usuario[]=[];*/
     // Inyectar las dependencias
     constructor(
         @InjectRepository(UsuarioEntity)
@@ -79,14 +55,14 @@ export class UsuarioService {
         return this._usuarioRepository.findOne(id);
     }
 
-    async autenticar(username: string,
+    async autenticar(email: string,
                      password: string): Promise<boolean> {
         // Password encriptada
         // Encriptar el passwrod que les llega
 
         const consulta: FindOneOptions<UsuarioEntity> = {
             where: {
-                username: username,
+                email: email,
                 password: password // password encriptado
             }
         };

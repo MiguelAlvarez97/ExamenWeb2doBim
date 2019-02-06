@@ -3,8 +3,7 @@ import {Headers, Get, Controller, HttpCode, InternalServerErrorException, Post,
 } from '@nestjs/common';
 import {AppService} from './app.service';
 import {Observable, of} from "rxjs";
-import {Request, Response} from "express";
-//import {UsuarioService} from "./usuario/Usuario.service";
+import {Request, Response} from "express"
 import {UsuarioService} from "./Usuario/Usuario.service";
 
 @Controller()  //decoradores
@@ -45,7 +44,7 @@ export class AppController {
     adiosMundo(): string {
         return 'Adios mundo'
     }
-
+/*
     @Post('adiosMundo') // url
     adiosMundoPOST(
         @Res() response,
@@ -59,7 +58,7 @@ export class AppController {
             }
         );
     }
-
+*/
     @Get('adiosMundoPromesa') // url
     adiosMundoPromesa(): Promise<string> {
         const promesaAdios = (): Promise<string> => {
@@ -193,9 +192,9 @@ export interface Usuario {
     fechaNacimiento:string
 
 }
-/*
-export interface Noticia {
-    id?: number;
-    titulo: string;
-    descripcion: string;
-}*/
+
+export interface Rol {
+    rolId?: number;
+    tipo: string;
+
+}
