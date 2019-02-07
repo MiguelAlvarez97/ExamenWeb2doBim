@@ -44,7 +44,7 @@ export class AppController {
     adiosMundo(): string {
         return 'Adios mundo'
     }
-/*
+
     @Post('adiosMundo') // url
     adiosMundoPOST(
         @Res() response,
@@ -52,13 +52,13 @@ export class AppController {
         response.render(
             'inicio',
             {
-                usuario: 'Adrian',
+                usuario: 'Edison',
                 arreglo: [],
                 booleano: true,
             }
         );
     }
-*/
+
     @Get('adiosMundoPromesa') // url
     adiosMundoPromesa(): Promise<string> {
         const promesaAdios = (): Promise<string> => {
@@ -150,7 +150,7 @@ export class AppController {
     @HttpCode(200)
     async ejecutarLogin(
         @Body('email') email: string,
-        @Body('password') password: string,
+        @Body('pass') password: string,
         @Res() res,
         @Session() sesion
     ) {
@@ -162,6 +162,7 @@ export class AppController {
         if (respuesta) {
             sesion.usuario = email;
             res.redirect('usuario/inicio');
+            //res.redirect('usuario/inicio');
         } else {
             res.redirect('login');
         }

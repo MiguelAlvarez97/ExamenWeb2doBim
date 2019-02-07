@@ -1,37 +1,72 @@
-<% const estaCreando = typeof noticia === "undefined"%>
+<% const estaCreando = typeof usuario === "undefined"%>
 
 
-<h1> <%= estaCreando ? 'Crear':'Actualizar' %> noticia</h1>
+<h1> <%= estaCreando ? 'Crear':'Actualizar' %> usuario</h1>
 
-<p><%= estaCreando ? 'Cree':'Actualice' %> una noticia</p>
+<p><%= estaCreando ? 'Cree':'Actualice' %> una usuario</p>
 
 <!-- emmet -->
-<form action="/noticia/<%= estaCreando ? 'crear' : 'actualizar' %>-noticia/<%= estaCreando ? '' : noticia.id %>"
+<form action="/usuario/<%= estaCreando ? 'crear' : 'actualizar' %>-usuario/<%= estaCreando ? '' : usuario.id %>"
       method="POST">
 
     <div>
-        <label for="titulo">Titulo</label>
-        <input id="titulo"
-               name="titulo"
+        <label for="id">Id</label>
+        <input id="id"
+               name="id"
                type="text"
-               value="<%= estaCreando ? '' : noticia.titulo %>"
+               value="<%= estaCreando ? '' : usuario.id %>"
         >
     </div>
 
     <div>
-        <label for="descripcion">Descripcion</label>
-        <textarea id="descripcion"
-                  name="descripcion"
-                  cols="30" rows="4">
-            <%= estaCreando ? '' : noticia.descripcion %>
-
-        </textarea>
+        <label for="nombre">Nombre</label>
+        <input id="nombre"
+               name="nombre"
+               type="text"
+               value="<%= estaCreando ? '' : usuario.nombre %>"
+        >
     </div>
 
-    <button><%= estaCreando ? 'Crear' : 'Actualizar' %> noticia</button>
+    <div>
+        <label for="apellido">Apellido</label>
+        <input id="apellido"
+               name="apellido"
+               type="text"
+               value="<%= estaCreando ? '' : usuario.apellido %>"
+        >
+    </div>
+
+    <div>
+        <label for="email">E-mail</label>
+        <input id="email"
+               name="email"
+               type="text"
+               value="<%= estaCreando ? '' : usuario.email %>"
+        >
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input id="password"
+               name="password"
+               type="text"
+               value="<%= estaCreando ? '' : usuario.pass %>"
+        >
+    </div>
+
+    <div>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input id="fechaNacimiento"
+               name="fechaNacimiento"
+               type="text"
+               value="<%= estaCreando ? '' : usuario.fechaNacimiento %>"
+        >
+    </div>
+
+    <button><%= estaCreando ? 'Crear' : 'Actualizar' %> usuario</button>
 
 </form>
 
-<a href="/noticia/inicio">
+<a href="/usuario/inicio">
     <button>Regresar</button>
 </a>

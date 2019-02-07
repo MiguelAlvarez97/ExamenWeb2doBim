@@ -20,7 +20,7 @@ import {RolUsuarioModule} from "./RolesPorUsuario/RolesPorUsuario.module";
           username: 'edison',
           password: '123456',
           synchronize: true,
-          dropSchema: true,
+          dropSchema: false,
           entities: [
               UsuarioEntity,
               RolEntity,

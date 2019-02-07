@@ -119,7 +119,7 @@ export class UsuarioController {
         objetoValidacionUsuario.apellido = usuario.apellido;
         objetoValidacionUsuario.email = usuario.email;
         objetoValidacionUsuario.password = usuario.password;
-        objetoValidacionUsuario.fechaNacimiento = usuario.fechaNacimiento;
+        //objetoValidacionUsuario.fechaNacimiento = usuario.fechaNacimiento;
 
         const errores: ValidationError[] =
             await validate(objetoValidacionUsuario);

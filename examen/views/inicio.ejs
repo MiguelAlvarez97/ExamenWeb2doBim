@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pedidos</a>
+                <a class="nav-link" href="#">Campeonatos</a>
             </li>
             <!--
             <li class="nav-item dropdown">
@@ -154,10 +154,11 @@
             <thead>
             <tr>
                 <!-- th -> table header -->
-                <th width="15%">Id</th>
-                <th width="30%">Nombre</th>
-                <th width="25%">Cargo</th>
-                <th width="30%">Restaurant</th>
+                <th width="5%">Id</th>
+                <th width="20%">Nombre</th>
+                <th width="20%">Apellido</th>
+                <th width="30%">Email</th>
+                <th width="25%">Fecha Nacimiento</th>
             </tr>
             </thead>
             <!-- tr -> table row -->
@@ -166,9 +167,10 @@
                 <tr>
                     <!-- td -> table detail -->
                     <td><%= usuario.id %></td>
-                    <td><%= usuario.username %></td>
-                    <td><%= usuario.tipo %></td>
-                    <td><%= usuario.restaurant %></td>
+                    <td><%= usuario.nombre %></td>
+                    <td><%= usuario.apellido %></td>
+                    <td><%= usuario.email %></td>
+                    <td><%= usuario.fechaNacimiento %></td>
                     <td>
                         <form action="/usuario/eliminar/<%= usuario.id %>" method="POST">
                             <!--<button type="button"> clickea sin problemas</button>

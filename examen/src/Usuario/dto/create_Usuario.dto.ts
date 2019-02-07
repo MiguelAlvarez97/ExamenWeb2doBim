@@ -43,11 +43,12 @@ export class CreateUsuarioDto {
         message: "Contrase;a Invalida"
     })
     password: string;
-
-    @IsNotEmpty()
+/*
+    @IsOptional()
+    //@IsNotEmpty()
     @IsString()
     @IsDate()
     fechaNacimiento: string;
-
+*/
 
 }
