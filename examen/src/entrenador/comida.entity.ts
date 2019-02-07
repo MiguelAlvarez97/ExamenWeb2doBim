@@ -1,6 +1,6 @@
 import {Entity, ManyToOne} from "typeorm";
 import {PrimaryGeneratedColumn,Column, OneToMany} from "typeorm";
-import {IngredienteEntity} from "../ingrediente/ingrediente.entity";
+import {PokemonEntity} from "../pokemon/pokemon.entity";
 import {UsuarioEntity} from "../usuario/usuario.entity";
 
 
@@ -25,9 +25,9 @@ export class ComidaEntity {
     usuario:UsuarioEntity;
 
     @OneToMany(
-        type => IngredienteEntity,
+        type => PokemonEntity,
         // @ts-ignore
         ingrediente => ingrediente.comidas
     )
-    ingredientes:IngredienteEntity[];
+    ingredientes:PokemonEntity[];
 }

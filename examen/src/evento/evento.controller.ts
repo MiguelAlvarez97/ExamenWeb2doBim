@@ -1,7 +1,7 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
 import {Evento, EventoService} from "./evento.service";
-import {IngredienteService} from "../ingrediente/ingrediente.service";
-import {IngredienteEntity} from "../ingrediente/ingrediente.entity";
+import {PokemonService} from "../pokemon/pokemon.service";
+import {PokemonEntity} from "../pokemon/pokemon.entity";
 import {EventoEntity} from "./evento.entity";
 import {In} from "typeorm";
 
@@ -9,7 +9,7 @@ import {In} from "typeorm";
 export class EventoController {
     constructor(
         private readonly _eventoService:EventoService,
-        private readonly _ingredienteService:IngredienteService
+        private readonly _ingredienteService:PokemonService
     )
     {}
 

@@ -1,0 +1,51 @@
+
+<% include ./comunes/header.ejs %>
+<div class="container">
+<div class="row" style="padding-top: 100px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+        <h1 class="titulo">Registro de Entrenador: </h1>
+        <!-- Modal Content -->
+        <form action="/entrenador/registrar" method="post">
+
+
+            <label for="nombreEntrenador"><b>Nombre del Entrenador</b></label>
+            <input class="form-control"
+                   id="nombreEntrenador" type="text" placeholder="Ingresa el nombre del Entrenador" name="nombreEntrenador" required>
+
+            <label for="apellidoEntrenador"><b>apellido del Entrenador</b></label>
+            <input class="form-control"
+                   id="apellidoEntrenador" type="text" placeholder="Ingresa el apellido del Entrenador" name="apellidoEntrenador" required>
+
+            <label for="fecha_nacimiento"><b>Fecha Nacimiento</b></label>
+            <input class="form-control"
+                   id="fecha_nacimiento" type="date" placeholder="Ingresa la Fecha de Nacimiento" name="fecha_nacimiento" required>
+
+            <label for="numeroMedallas"><b>Numero de Medallas</b></label>
+            <input class="form-control"
+                   id="numeroMedallas" type="number" placeholder="Ingresa numero de medallas" name="numeroMedallas" required>
+
+            <label for="escampeon"><b>Campeon Actual</b></label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="campeon" id="campeon" value="true" checked>
+                <label class="form-check-label" for="campeon">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="campeon" id="campeon" value="false">
+                <label class="form-check-label" for="campeon">
+                    No
+                </label>
+            </div>
+
+            <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

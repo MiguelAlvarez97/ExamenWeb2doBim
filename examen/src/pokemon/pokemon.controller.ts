@@ -1,10 +1,10 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
-import {Ingrediente, IngredienteService} from "./ingrediente.service";
+import {Ingrediente, PokemonService} from "./pokemon.service";
 
-@Controller('ingrediente')
-export class IngredienteController {
+@Controller('pokemon')
+export class PokemonController {
     constructor(
-        private readonly _ingredienteService:IngredienteService,
+        private readonly _ingredienteService:PokemonService,
     )
     {}
 

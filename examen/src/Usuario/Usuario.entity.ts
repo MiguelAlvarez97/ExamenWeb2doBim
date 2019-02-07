@@ -1,7 +1,7 @@
 import {Entity, ManyToMany, JoinTable, OneToMany} from "typeorm";
 import {Column,PrimaryGeneratedColumn} from "typeorm";
 import {RolEntity} from "../rol/rol.entity";
-import {ComidaEntity} from "../comida/comida.entity";
+import {ComidaEntity} from "../entrenador/comida.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {

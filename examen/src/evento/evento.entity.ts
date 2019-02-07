@@ -1,5 +1,5 @@
 import {Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn} from "typeorm";
-import {IngredienteEntity} from "../ingrediente/ingrediente.entity";
+import {PokemonEntity} from "../pokemon/pokemon.entity";
 
 
 @Entity('evento')
@@ -14,7 +14,7 @@ export class EventoEntity {
     latitud:number;
     @Column()
     longitud:number;
-    @ManyToMany(type => IngredienteEntity)
+    @ManyToMany(type => PokemonEntity)
     @JoinTable({
         name: "evento_ingredientes", // table name for the junction table of this relation
         joinColumn: {
@@ -22,9 +22,9 @@ export class EventoEntity {
             referencedColumnName: "id"
         },
         inverseJoinColumn: {
-            name: "ingrediente",
+            name: "pokemon",
             referencedColumnName: "id"
         }
     })
-    ingredientes:IngredienteEntity[];
+    ingredientes:PokemonEntity[];
 }

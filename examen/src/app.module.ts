@@ -3,12 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {UsuarioEntity} from "./usuario/usuario.entity";
-import {IngredienteEntity} from "./ingrediente/ingrediente.entity";
+import {PokemonEntity} from "./pokemon/pokemon.entity";
 import {EventoEntity} from "./evento/evento.entity";
-import {ComidaEntity} from "./comida/comida.entity";
+import {ComidaEntity} from "./entrenador/comida.entity";
 import {RolEntity} from "./rol/rol.entity";
 import {UsuarioModule} from "./usuario/usuario.module";
-import {ComidaModule} from "./comida/comida.module";
+import {ComidaModule} from "./entrenador/comida.module";
 import {EventoModule} from "./evento/evento.module";
 
 @Module({
@@ -17,7 +17,7 @@ import {EventoModule} from "./evento/evento.module";
           {
               type: 'mysql',
               host: '192.168.99.100',
-              port: 32779,
+              port: 32781,
               database: 'entrenador',
               username: 'edison',
               password: '123456',
@@ -25,7 +25,7 @@ import {EventoModule} from "./evento/evento.module";
               dropSchema: false,
                 entities:[
                     UsuarioEntity,
-                    IngredienteEntity,
+                    PokemonEntity,
                     EventoEntity,
                     ComidaEntity,
                     RolEntity

@@ -4,7 +4,7 @@ import {FindManyOptions, Repository} from "typeorm";
 
 import {InjectRepository} from '@nestjs/typeorm';
 import {UsuarioEntity} from "../usuario/usuario.entity";
-import {IngredienteEntity} from "../ingrediente/ingrediente.entity";
+import {PokemonEntity} from "../pokemon/pokemon.entity";
 
 @Injectable()
 export class ComidaService {
@@ -44,6 +44,6 @@ export interface Comida {
     numeroPersonas:string;
     picante:boolean;
     usuario?:UsuarioEntity,
-    ingredientes?:IngredienteEntity[]
+    ingredientes?:PokemonEntity[]
 }
 

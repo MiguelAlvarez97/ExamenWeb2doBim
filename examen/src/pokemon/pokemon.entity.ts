@@ -1,17 +1,17 @@
 import {Entity, ManyToMany, ManyToOne} from "typeorm";
 import {PrimaryGeneratedColumn,Column, OneToMany} from "typeorm";
-import {ComidaEntity} from "../comida/comida.entity";
+import {ComidaEntity} from "../entrenador/comida.entity";
 import {EventoEntity} from "../evento/evento.entity";
 
 
-@Entity('ingrediente')
-export class IngredienteEntity {
+@Entity('pokemon')
+export class PokemonEntity {
     @PrimaryGeneratedColumn()
     id:number;
     @Column()
-    nombreIngrediente:string;
+    nombrePokemon:string;
     @Column()
-    cantidad:number;
+    nivel:number;
     @Column()
     descripcionPreparacion:string;
     @Column()

@@ -3,19 +3,19 @@ import {EventoService} from "./evento.service";
 import {EventoEntity} from "./evento.entity";
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {EventoController} from "./evento.controller";
-import {IngredienteEntity} from "../ingrediente/ingrediente.entity";
-import {IngredienteController} from "../ingrediente/ingrediente.controller";
-import {IngredienteService} from "../ingrediente/ingrediente.service";
+import {PokemonEntity} from "../pokemon/pokemon.entity";
+import {PokemonController} from "../pokemon/pokemon.controller";
+import {PokemonService} from "../pokemon/pokemon.service";
 
 @Module(
     {
         imports:[
             TypeOrmModule.forFeature([EventoEntity]),
-            TypeOrmModule.forFeature([IngredienteEntity])
+            TypeOrmModule.forFeature([PokemonEntity])
         ],
-        controllers:[EventoController,IngredienteController],
-        providers:[EventoService,IngredienteService],
-        exports:[EventoService,IngredienteService],
+        controllers:[EventoController,PokemonController],
+        providers:[EventoService,PokemonService],
+        exports:[EventoService,PokemonService],
     }
 )
 export class EventoModule {

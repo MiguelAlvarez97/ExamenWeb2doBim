@@ -88,10 +88,10 @@ body{
     margin-top:7px;
     text-align:center;
 }
-
+/*
 .titulo{
-    border-bottom: 6px solid #4b9609;
-}
+    alignment: center;
+}*/
 
 .titulo-top{
     border-top: 6px solid #000000;

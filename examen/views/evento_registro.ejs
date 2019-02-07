@@ -4,7 +4,7 @@
     <div class="row" style="padding-top: 100px;">
     <div class="col-md-4"></div>
     <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
-        <h1 class="titulo">Registro de Evento: </h1>
+        <h1 class="titulo">Liga Pokemon</h1>
         <!-- Modal Content -->
         <form action="/evento/registrar" method="post">
 
@@ -25,11 +25,11 @@
             <input  class="form-control"
                     id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
 
-            <label for="ingredientes"><b>Ingredientes</b></label>
+        <!--    <label for="ingredientes"><b>Ingredientes</b></label>
             <div class="form-check" id="contenido_ingredientes">
 
             </div>
-
+-->
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
         </form>
@@ -42,7 +42,7 @@
 <script>
 
     let contenido = $("#contenido_ingredientes");
-    const url = 'http://localhost:3000/ingrediente/listar';
+    const url = 'http://localhost:3000/pokemon/listar';
     $.get(
         url, // URL
         (datos) => {  // Callback
@@ -61,7 +61,7 @@
                     let html =`
                 <input class="form-check-input" name="ingredientes" type="checkbox" value=${ingrediente.id} id="${ingrediente.id}">
                     <label class="form-check-label" for="${ingrediente.id}">
-                        ${ingrediente.nombreIngrediente}
+                        ${ingrediente.nombrePokemon}
                     </label>
                 <br>`
                     contenido.append(html);
