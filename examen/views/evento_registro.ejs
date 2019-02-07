@@ -1,0 +1,74 @@
+
+<% include ./comunes/header.ejs %>
+<div class="container">
+    <div class="row" style="padding-top: 100px;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+        <h1 class="titulo">Registro de Evento: </h1>
+        <!-- Modal Content -->
+        <form action="/evento/registrar" method="post">
+
+
+            <label for="nombre"><b>Nombre del Evento</b></label>
+            <input class="form-control"
+                   id="nombre" type="text" placeholder="Ingresa el nombre del evento" name="nombre" required>
+
+            <label for="fecha"><b>Fecha del evento</b></label>
+            <input class="form-control"
+                      id="fecha" type="date" placeholder="Fecha del evento" name="fecha" required>
+
+            <label for="latitud"><b>Latitud</b></label>
+            <input class="form-control"
+                   id="latitud" type="text" placeholder="Ingresa la latidud" name="latitud" required>
+
+            <label for="longitud"><b>Longitud</b></label>
+            <input  class="form-control"
+                    id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
+
+            <label for="ingredientes"><b>Ingredientes</b></label>
+            <div class="form-check" id="contenido_ingredientes">
+
+            </div>
+
+            <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<script>
+
+    let contenido = $("#contenido_ingredientes");
+    const url = 'http://localhost:3000/ingrediente/listar';
+    $.get(
+        url, // URL
+        (datos) => {  // Callback
+            console.log(datos)
+            const arregloIngredientes = datos;
+            contenido.empty()
+            llenarIngredientes(arregloIngredientes);
+        }
+    )
+
+
+    function llenarIngredientes(arregloIngredientes) {
+        arregloIngredientes
+            .forEach(
+                (ingrediente) => {
+                    let html =`
+                <input class="form-check-input" name="ingredientes" type="checkbox" value=${ingrediente.id} id="${ingrediente.id}">
+                    <label class="form-check-label" for="${ingrediente.id}">
+                        ${ingrediente.nombreIngrediente}
+                    </label>
+                <br>`
+                    contenido.append(html);
+                }
+            )
+    }
+
+
+</script>
+<% include ./comunes/footer.ejs %>

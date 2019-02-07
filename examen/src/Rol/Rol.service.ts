@@ -1,44 +1,29 @@
-import {Injectable} from "@nestjs/common";
-import {Rol} from '../app.controller';
-import {RolEntity} from './rol.entity';
-import {FindManyOptions, Repository} from 'typeorm';
+import {Injectable,Inject} from "@nestjs/common";
+import {RolEntity} from "./rol.entity";
+import {Repository} from "typeorm";
+import {FindManyOptions} from "typeorm";
 import {InjectRepository} from '@nestjs/typeorm';
+import {UsuarioEntity} from "../usuario/usuario.entity";
 
 @Injectable()
 export class RolService {
-
     constructor(
         @InjectRepository(RolEntity)
-        private readonly _rolRepository : Repository<RolEntity>
+        private readonly _rolRepository:Repository<RolEntity>
     ){}
 
-    buscarRol(parametrosBusqueda?: FindManyOptions<RolEntity>)
-        : Promise<RolEntity[]> {
-        return this._rolRepository.find(parametrosBusqueda);
+    buscar(parametros?:FindManyOptions):Promise<RolEntity[]>{
+        return this._rolRepository.find(parametros)
     }
 
-    crearRol(rol: Rol) : Promise<RolEntity> {
-        const rolEntity : RolEntity = this._rolRepository
-            .create(rol);
-        return this._rolRepository.save(rolEntity);
+    buscarPorId(id: number): Promise<RolEntity> {
+        return this._rolRepository.findOne(id );
     }
 
-    eliminarRol(rolId: number) : Promise<RolEntity> {
-        const rolEliminar : RolEntity = this._rolRepository
-            .create({
-                rolId: rolId
-            });
-        return this._rolRepository.remove(rolEliminar)
-    }
+}
 
-    actualizarRol(nuevoRol: Rol) : Promise<RolEntity> {
-        const rolEntity: RolEntity = this._rolRepository
-            .create(nuevoRol);
-        return this._rolRepository.save(rolEntity);
-    }
 
-    buscarPorIdRol(rolId: number) : Promise<RolEntity> {
-        return this._rolRepository.findOne(rolId);
-    }
-
+export interface Rol {
+    id?:number;
+    nombre:string;
 }

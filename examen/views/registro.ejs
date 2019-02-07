@@ -1,0 +1,43 @@
+<% include ./comunes/header.ejs %>
+<% const existeMensaje = typeof errores !== "undefined" ? true : false; %>
+
+<div class="container">
+    <div class="row" style="padding-top: 100px;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+        <% if(existeMensaje){ %>
+            <div class="animated fadeInUp alert alert-danger" role="alert">
+                ERROR: <%= errores %>
+            </div>
+        <% } %>
+        <h1 class="titulo">Formulario de Registro: </h1>
+        <!-- Modal Content -->
+        <form action="/usuario/registrarse" method="post">
+
+
+            <label for="nombre"><b>Nombre</b></label>
+            <input class="form-control"
+                   id="nombre" type="text" placeholder="Ingresa tu Nombre" name="nombre" required>
+
+            <label for="fecha_nacimiento"><b>Fecha Nacimiento</b></label>
+            <input class="form-control"
+                   id="fecha_nacimiento" type="date" placeholder="Ingresa tu Fecha de Nacimiento" name="fecha_nacimiento" required>
+
+            <label for="correo"><b>Correo</b></label>
+            <input class="form-control"
+                   id="correo" type="text" placeholder="Ingresa tu email" name="correo" required>
+
+            <label for="password"><b>Contraseña</b></label>
+            <input  class="form-control"
+                    id="password" type="password" placeholder="Ingresa tu contraseña" name="password" required>
+
+            <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

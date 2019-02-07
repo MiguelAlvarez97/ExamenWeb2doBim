@@ -1,0 +1,148 @@
+
+<% include ./comunes/header.ejs %>
+
+<div class="container">
+<div class="row" style="padding-top: 100px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-dark text-white" id="contenido">
+        <h1>Usuarios: </h1>
+        <form action="/usuario/listar" method="get">
+            <div class="row text-white"  style="background-color: rgba(0, 0, 0, 0.7);">
+                <div class="col-sm-9 text-dark">
+                    <div class="form-group">
+                        <label for="busqueda">Buscar</label>
+                        <input id="busqueda"
+                               type="text"
+                               class="form-control"
+                               name="busqueda"
+                               placeholder="Busque usuarios por nombre o correo"
+                        >
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-dark btn-block btn-buscar"
+                            type="submit">Buscar
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+
+<div class="row" >
+    <div class="col-md-2"></div>
+    <div class="col-md 8 text-white" style="background-color: rgba(0, 0, 0, 0.7);" >
+
+        <table class="table table-hover animated fadeInUp">
+            <caption>Lista de usuarios</caption>
+            <!-- tr -> table row -->
+            <thead>
+            <tr>
+                <!-- th -> table header -->
+                <th width="30%">Nombre</th>
+                <th width="50%">Correo</th>
+                <th width="20%">Fecha Nacimiento</th>
+                <th width="20%">Acciones</th>
+            </tr>
+            </thead>
+            <!-- tr -> table row -->
+            <tbody>
+            <% usuarios.forEach((usuario)=>{ %>
+                <tr>
+                    <!-- td -> table detail -->
+                    <td><%= usuario.nombre %></td>
+                    <td><%= usuario.correo %></td>
+                    <td><%= usuario.fecha_nacimiento %></td>
+
+                    <td>
+
+
+                        <button class="btn btn-danger btn-block btn-espaciado" data-toggle="modal" data-target="#myModal">Eliminar</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title titulo">Confirmar</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Desea eliminar el Usuario?</strong></p>
+                                        <img style="width: 100%; height: auto; object-fit: contain;"
+                                             src="https://www.w3schools.com/howto/img_avatar2.png">
+                                    </div>
+                                    <div class="modal-footer" style="background-color: black;">
+                                        <form action="/usuario/borrar/<%= usuario.id %>"
+                                              method="post">
+                                            <!--<button type="button">Yo no</button>-->
+                                            <!--<button>Yo si</button>-->
+                                            <button type="submit"
+                                                    class="btn btn-outline-danger btn-block btn-espaciado"
+                                                    >Eliminar
+                                            </button>
+                                        </form>
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <a class="quitar-decoracion" href="/usuario/actualizar/<%= usuario.id %>">
+                                <button class="btn btn-outline-success btn-block btn-espaciado"
+                                        type="button">
+                                    Actualizar
+                                </button>
+                            </a>
+                    </td>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title titulo">Confirmar</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Desea eliminar el Usuario?</strong></p>
+                                </div>
+                                <div class="modal-footer" style="background-color: black;">
+                                    <form action="/usuario/borrar/<%= usuario.id %>"
+                                          method="post">
+                                        <!--<button type="button">Yo no</button>-->
+                                        <!--<button>Yo si</button>-->
+                                        <button type="submit"
+                                                class="btn btn-danger btn-espaciado"
+                                        >Eliminar
+                                        </button>
+                                    </form>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+</div>
+<script>
+    function borrar(evento) {
+        const respuesta = confirm('¿Estas seguro?')
+        if (!respuesta) {
+            event.preventDefault();
+        }
+    }
+</script>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

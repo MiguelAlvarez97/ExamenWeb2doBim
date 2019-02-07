@@ -1,0 +1,111 @@
+
+<% include ./comunes/header.ejs %>
+<div class="container">
+    <div class="row" style="padding-top: 100px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+        <h1 class="titulo">Registro de Ingrediente: </h1>
+        <!-- Modal Content -->
+        <form action="/ingrediente/registrar" method="post">
+
+
+            <label for="nombreIngrediente"><b>Nombre del Ingrediente</b></label>
+            <input class="form-control"
+                   id="nombreIngrediente" type="text" placeholder="Ingresa el nombre del ingredinte" name="nombreIngrediente" required>
+
+            <label for="tipoIngrediente"><b>Tipo del Ingrediente</b></label>
+            <input class="form-control"
+                   id="tipoIngrediente" type="text" placeholder="Ingresa el tipo del ingredinte" name="tipoIngrediente" required>
+
+
+            <label for="descripcionPreparacion"><b>Descripcion del Platillo</b></label>
+            <textarea class="form-control"
+                      id="descripcionPreparacion" type="text"  name="descripcionPreparacion" required>
+            </textarea>
+
+
+            <label for="cantidad"><b>Cantidad</b></label>
+            <input  class="form-control"
+                    id="cantidad" type="number" placeholder="Ingresa el numero de personas" name="cantidad" required>
+
+            <label for="opcional"><b>Es opcional</b></label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="opcional" id="opcional" value="true" checked>
+                <label class="form-check-label" for="opcional">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="opcional" id="opcional" value="false">
+                <label class="form-check-label" for="opcional">
+                    No
+                </label>
+            </div>
+
+            <label for="necesitaRefrigeracion"><b>Necesita refrigeracion</b></label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="necesitaRefrigeracion" id="necesitaRefrigeracion" value="true" checked>
+                <label class="form-check-label" for="necesitaRefrigeracion">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="necesitaRefrigeracion" id="necesitaRefrigeracion" value="false">
+                <label class="form-check-label" for="necesitaRefrigeracion">
+                    No
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="comidas">Comidas Disponibles</label>
+                <select class="form-control"
+                        name="comida"
+                        id="comida" required>
+                </select>
+            </div>
+
+            <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<script>
+    let etiquerasSelectComidas = document.getElementById('comida')
+    const url = 'http://localhost:3000/comida/listar';
+    $.get(
+        url, // URL
+        (datos) => {  // Callback
+            console.log(datos)
+            const arregloComidas = datos;
+            matarHijos();
+            llenarComidas(arregloComidas);
+        }
+    )
+
+
+
+
+    function llenarComidas(arregloComidas) {
+        arregloComidas
+            .forEach(
+                (comida) => {
+                    const nuevaOption = document.createElement('option');
+                    nuevaOption.value = comida.id;
+                    nuevaOption.innerText = comida.nombrePlato;
+                    nuevaOption.localName = 'comida_nombre'
+                    etiquerasSelectComidas.appendChild(nuevaOption);
+                }
+            )
+    }
+
+    function matarHijos() { //AKA eliminarLasOpciones
+        while (etiquerasSelectComidas.firstChild) {
+            etiquerasSelectComidas.removeChild(etiquerasSelectComidas.firstChild);
+        }
+    }
+</script>
+<% include ./comunes/footer.ejs %>

@@ -1,81 +1,100 @@
-import {Injectable} from "@nestjs/common";
-import {InjectRepository} from "@nestjs/typeorm";
-import {FindManyOptions, FindOneOptions, Repository} from "typeorm";
-import {Usuario} from "../app.controller";
-import {UsuarioEntity} from "./Usuario.entity";
+import {Inject, Injectable} from "@nestjs/common";
+import {UsuarioEntity} from "./usuario.entity";
+import {Repository} from "typeorm";
+import {FindManyOptions} from "typeorm";
+import {InjectRepository} from '@nestjs/typeorm';
+import {RolModule} from "../rol/rol.module";
+import {RolEntity} from "../rol/rol.entity";
 
-//import {NoticiaEntity} from "../noticia/noticia-entity";
 
 @Injectable()
 export class UsuarioService {
-     /*arreglo: Usuario[]=[];*/
-    // Inyectar las dependencias
+    // Inyectar Dependencias
     constructor(
         @InjectRepository(UsuarioEntity)
         private readonly _usuarioRepository: Repository<UsuarioEntity>,
     ) {
     }
 
-    buscar(parametrosBusqueda?: FindManyOptions<UsuarioEntity>)
+    buscar(parametros?: FindManyOptions<UsuarioEntity>)
         : Promise<UsuarioEntity[]> {
-        return this._usuarioRepository.find(parametrosBusqueda);
+        return this._usuarioRepository.find(parametros);
     }
 
-    crear(usuario: Usuario): Promise<UsuarioEntity> {
+    buscarPorId(id: number): Promise<UsuarioEntity> {
+        return this._usuarioRepository.findOne(id, {relations: ["roles"]} );
+    }
 
-        // Metodo Create es como un CONSTRUCTOR de la ENTIDAD
-        const usuarioEntity: UsuarioEntity = this._usuarioRepository
-            .create(usuario);
+    async crear(nuevoUsuario: Usuario): Promise<UsuarioEntity> {
 
-        // Metodo Save Guarda en la BDD
+        // Instanciar una entidad -> .create()
+        const usuarioEntity = this._usuarioRepository
+            .create(nuevoUsuario);
+
+        // Guardar una entidad en la BDD -> .save()
+        const usuarioCreado = await this._usuarioRepository
+            .save(usuarioEntity);
+
+        return usuarioCreado;
+    }
+
+
+    async login(correo: string, password: string)
+        : Promise<number> {
+        // 1) Buscar al usuario por username
+        // 2) Comparar si el password es igual al password
+
+        const usuarioEncontrado = await this._usuarioRepository
+            .findOne({
+                where: {
+                    correo: correo
+                }
+            });
+        if(usuarioEncontrado){
+            if(usuarioEncontrado.password === password){
+                return usuarioEncontrado.id
+            }else {
+                return 0
+            }
+        }else {
+            return 0
+        }
+    }
+
+    actualizar(id: number,
+               nuevoUsuario: Usuario): Promise<UsuarioEntity> {
+
+        nuevoUsuario.id = id;
+
+        const usuarioEntity = this._usuarioRepository.create(nuevoUsuario);
+
         return this._usuarioRepository.save(usuarioEntity);
-
     }
 
-    eliminar(idUsuario: number): Promise<UsuarioEntity> {
 
-        const UsuarioAEliminar: UsuarioEntity = this._usuarioRepository
+
+
+    borrar(idUsuario: number): Promise<UsuarioEntity> {
+
+        // CREA UNA INSTANCIA DE LA ENTIDAD
+        const usuarioEntityAEliminar = this._usuarioRepository
             .create({
                 id: idUsuario
             });
 
-        return this._usuarioRepository.remove(UsuarioAEliminar);
+
+        return this._usuarioRepository.remove(usuarioEntityAEliminar)
     }
 
-    actualizar(nuevoUsuario: Usuario): Promise<UsuarioEntity> {
 
-        const usuarioEntity: UsuarioEntity = this._usuarioRepository
-            .create(nuevoUsuario);
+}
 
-        return this._usuarioRepository.save(usuarioEntity);
-
-    }
-
-    buscarPorId(id: number): Promise<UsuarioEntity> {
-        return this._usuarioRepository.findOne(id);
-    }
-
-    async autenticar(email: string,
-                     password: string): Promise<boolean> {
-        // Password encriptada
-        // Encriptar el passwrod que les llega
-
-        const consulta: FindOneOptions<UsuarioEntity> = {
-            where: {
-                email: email,
-                password: password // password encriptado
-            }
-        };
-
-        const respuesta = await this._usuarioRepository.findOne(consulta);
-
-        if (respuesta) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
+export interface Usuario {
+    id?: number;
+    nombre: string;
+    correo: string;
+    password: string;
+    fecha_nacimiento:string;
+    roles:RolEntity[];
 }
 

@@ -1,93 +1,118 @@
 /*
-        BUSQUEDA {
-            PROPIEDAD: VALOR-PROPIEDAD;
-            PROPIEDAD: VALOR-PROPIEDAD;
-            PROPIEDAD: VALOR-PROPIEDAD;
-            PROPIEDAD: VALOR-PROPIEDAD;
-            PROPIEDAD: VALOR-PROPIEDAD;
-        }
+            CSS
 
-        ETIQUETAS {
-
-        }
-
-        CLASSES {
-
-        }
-
-        ID {
-
-        }
-
-        Orden de importancia
-
-        ID > Busquedas complejas > CLASE > ETIQUETA
-
-        Orden de importancia
-
-        Ultimo que fue definido
-
-        Busquedas complejas
-
-        ETIQUETA.CLASE {
-
-        }
-
-        ETIQUETA.CLASE.CLASE.CLASE.CLASE.CLASE.CLASE {
-
-        }
-
-        ETIQUETA_ANTES + ETIQUETA_DESPUES {
-
-        }
+            BUSQUEDA {
+                PROPIEDAD:VALOR-PROPIEDAD;
+                PROPIEDAD:VALOR-PROPIEDAD;
+                PROPIEDAD:VALOR-PROPIEDAD;
+                PROPIEDAD:VALOR-PROPIEDAD;
+            }
 
 
-        ETIQUETA_PAPA > ETIQUETA HIJO > ETIQUETA NIETO{
+            ETIQUETA(h1) {
+                COLOR:VERDE;
+            }
 
-        }
+            ID (titulo) {
+                COLOR:AZUL;
+            }
 
 
-        Query Selectors
+            CLASE (verde) {
+                COLOR:VERDE;
+            }
 
-        */
+            CLASE (azul) {
+                COLOR:AZUL;
+            }
 
+            busqueda complejas
+
+            h1.amarillo.verde.rojo {
+
+            }
+
+            p.rojo {
+            }
+
+            ul.lista > li.item > a > span{
+                color:black;
+            }
+
+            h1 + p + span + li + a{
+                color:black;
+            }
+
+
+
+
+
+
+            <p class="azul amarillo verde">MMMM</p>
+
+            ID > BUSQUEDAS COMPLEJAS > CLASE > ETIQUETA
+
+            <h1 id="titulo" class="amarillo">OMG</h1>
+
+
+
+
+
+            */
 p {
     background-color: aliceblue;
 }
-
 #titulo {
-    background-color: green;
+    background-color: yellow;
 }
-
 .rojo {
     background-color: red;
+}
+.azul {
+    background-color: blue;
+}
+
+p.rojo{
+    background-color: darkblue;
+}
+
+p.azul.amarillo.rojo {
+    background-color: greenyellow;
 }
 
 .amarillo {
     background-color: yellow;
 }
 
-.azul {
-    background-color: blue;
-}
-
-p.amarillo {
-    background-color: pink;
-}
-
-p.amarillo.azul {
-    background-color: black;
-    color: white;
+ul > li.rojo > span{
+    font-size: 30px;
 }
 
 h1 + p {
-    background-color: greenyellow;
+    background-color: brown;
 }
 
-h1.amarillo + p.amarillo {
-    background-color: orange;
+@keyframes crecerCambiarColor {
+    0%   {
+        background-color: red;
+        font-size: 16px;
+    }
+    25%  {
+        background-color: yellow;
+        font-size: 20px;
+    }
+    50%  {
+        background-color: blue;
+        font-size: 40px;
+    }
+    100% {
+        background-color: red;
+        font-size: 16px;
+    }
 }
 
-ul > li > span {
-    background-color: purple;
+.animacion {
+    animation-name: crecerCambiarColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }

@@ -1,33 +1,20 @@
-import {Module} from '@nestjs/common';
-import {RolEntity} from'./Rol.entity'
-import {RolService} from './Rol.service';
-
+import {Module} from "@nestjs/common"
+import {RolEntity} from "./rol.entity";
 import {TypeOrmModule} from '@nestjs/typeorm';
-import { rolController } from './Rol.controller';
-
-
+import {RolService} from "./rol.service";
+import {RolController} from "./rol.controller";
 
 @Module(
     {
-        imports: [
-            TypeOrmModule
-                .forFeature(
-                    [
-                        RolEntity
-                    ])
+        imports:[
+            TypeOrmModule.forFeature([RolEntity])
         ],
-        controllers: [
-            rolController
-        ],
-        providers: [
-            RolService
-        ],
-        exports: [
-            RolService
-        ]
+        controllers:[RolController],
+        providers:[RolService],
+        exports:[RolService]
+
     }
 )
-
 export class RolModule {
 
 }

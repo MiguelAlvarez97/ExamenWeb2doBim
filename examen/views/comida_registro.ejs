@@ -1,0 +1,52 @@
+
+<% include ./comunes/header.ejs %>
+<div class="container">
+<div class="row" style="padding-top: 100px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+        <h1 class="titulo">Registro de plato: </h1>
+        <!-- Modal Content -->
+        <form action="/comida/registrar" method="post">
+
+
+            <label for="nombrePlato"><b>Nombre del Platillo</b></label>
+            <input class="form-control"
+                   id="nombrePlato" type="text" placeholder="Ingresa el nombre del platillo" name="nombrePlato" required>
+
+            <label for="descripcionPlato"><b>Descripcion del Platillo</b></label>
+            <textarea class="form-control"
+                   id="descripcionPlato" type="text" placeholder="Descripcion del platillo" name="descripcionPlato" required>
+            </textarea>
+
+            <label for="nacionalidad"><b>Nacionalidad de origen del platillo</b></label>
+            <input class="form-control"
+                   id="nacionalidad" type="text" placeholder="Ingresa la nacionalidad del platillo" name="nacionalidad" required>
+
+            <label for="numeroPersonas"><b>Numero de personas</b></label>
+            <input  class="form-control"
+                    id="numeroPersonas" type="number" placeholder="Ingresa el numero de personas" name="numeroPersonas" required>
+
+            <label for="espicante"><b>Es picante</b></label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="picante" id="picante" value="true" checked>
+                <label class="form-check-label" for="picante">
+                    Si
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="picante" id="picante" value="false">
+                <label class="form-check-label" for="picante">
+                    No
+                </label>
+            </div>
+
+            <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

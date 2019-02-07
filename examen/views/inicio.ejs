@@ -1,263 +1,73 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gestion de Usuarios</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/estilos-generales.css">
-    <link rel="stylesheet" href="/css/animate.css">
-</head>
-<body>
 
-<nav class="navbar fixed-top navbar-expand-lg  navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">PCV Portal</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<% include ./comunes/header.ejs %>
+<div class="container">
+    <div class="row" style="padding-top: 100px">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-dark text-white" id="contenido" >
+        <h1>Eventos: </h1>
+        <form action="/" method="get">
+            <div class="row" style="background-color: rgba(0, 0, 0, 0.7);">
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label for="busqueda">Busqueda de eventos</label>
+                        <input id="busqueda"
+                               type="text"
+                               class="form-control"
+                               name="busqueda">
+                    </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Campeonatos</a>
-            </li>
-            <!--
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>-->
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div class="col-sm-3">
+
+                    <button class="btn btn-dark btn-block btn-buscar"
+                            type="submit">Buscar
+                    </button>
+
+                </div>
+            </div>
         </form>
     </div>
-</nav>
+    <div class="col-md-2"></div>
 
-<div class="container">
+</div>
 
-    <% const existeMensaje = typeof mensaje !== "undefined" %>
-
-    <% if(existeMensaje){ %>
-
-        <div class="<%= clase %>" role="alert">
-            <span class="font-weight-bold">
-                MENSAJE
-            </span> : <%= mensaje %>
-        </div>
-    <% } %>
-
-    <br><br>
-    <h1>Datos de Usuario</h1>
-
-    <p>Busque, cree actualice y elimine usuario.</p>
-<!--
-    <form action="">
-        <div class="form-group">
-            <label for="paises">Seleccionar Paises</label>
-            <select class="form-control" id="paises">
-                <option value="1">Ecuador</option>
-                <option value="1">Peru</option>
-                <option value="1">Colombia</option>
-                <option value="1">Brazil</option>
-            </select>
-
-        </div>
-
-        <div class="form-group">
-            <label for="ciudades">Seleccionar Ciudad</label>
-            <select  disabled class="form-control" id="ciudades">
-
-            </select>
-
-        </div>
-    </form>
--->
-    <!-- ul -> unordered list  -->
-    <!-- ol -> ordered list  -->
-
-    <!-- a -> anchor -->
-
-    <form method="get" action="/usuario/inicio">
-
-        <div class="row">
-            <div class="col-sm-9">
-
-                <div class="form-group">
-
-                    <label for="busqueda">Busqueda</label>
-
-                    <input id="busqueda"
-                           type="text"
-                           name="busqueda"
-                           class="form-control">
-
-                </div>
-
-            </div>
-            <div class="col-sm-3">
-
-                <button
-                        class="btn btn-outline-success btn-block espaciado-busqueda">
-
-                    Buscar
-
-                </button>
-
-            </div>
-        </div>
-    </form>
-
-        <div class="row">
-        <div class="col-sm-9">
-            <!--<div class="form-group">
-
-                <input id="fecha"
-                       type="date"
-                       name="fecha"
-                       class="form-control ">
-            </div>-->
-        </div>
-        <div class="col-sm-3">
-            <a href="/usuario/crear-usuario"
-               class="quitar-link">
-
-                <button class="btn btn-outline-success btn-block">
-
-                    Crear Usuario
-
-
-                </button>
-            </a>
-        </div>
-    </div>
-
-    <h2>Lista de Usuarios</h2>
-
-    <div class="scroll-tabla"><table class="table table-hover animated slideInLeft" >
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-white" style="background-color: rgba(0, 0, 0, 0.7);">
+        <table class="table table-hover animated fadeInUp">
+            <caption>Lista de eventos</caption>
             <!-- tr -> table row -->
             <thead>
             <tr>
                 <!-- th -> table header -->
-                <th width="5%">Id</th>
-                <th width="20%">Nombre</th>
-                <th width="20%">Apellido</th>
-                <th width="30%">Email</th>
-                <th width="25%">Fecha Nacimiento</th>
+                <th width="30%">Nombre</th>
+                <th width="50%">Fecha</th>
+                <th width="20%">Acciones</th>
+
             </tr>
             </thead>
             <!-- tr -> table row -->
             <tbody>
-            <% arreglo.forEach( (usuario)=> { %>
+            <% eventos.forEach((evento)=>{ %>
                 <tr>
                     <!-- td -> table detail -->
-                    <td><%= usuario.id %></td>
-                    <td><%= usuario.nombre %></td>
-                    <td><%= usuario.apellido %></td>
-                    <td><%= usuario.email %></td>
-                    <td><%= usuario.fechaNacimiento %></td>
-                    <td>
-                        <form action="/usuario/eliminar/<%= usuario.id %>" method="POST">
-                            <!--<button type="button"> clickea sin problemas</button>
-                            <button>Yo tambien envio informacion</button>
-                            -->
-                            <button class="btn btn-outline-danger btn-block espaciado-boton"
-                                    type="submit">
-                                Eliminar
-                            </button>
-                        </form>
-                        <a  href="/usuario/actualizar-usuario/<%= usuario.id %>"
-                            class="quitar-link">
-                            <button
-                                    class="btn btn-outline-info btn-block espaciado-boton">
-                                Actualizar
+                    <td><%= evento.nombre %></td>
+                    <td><%= evento.fecha %></td>
+                    <td><a href="/evento/ver/<%= evento.id %>">
+                            <button class="btn btn-info btn-block btn-b"
+                                type="submit">Ver
                             </button>
                         </a>
-
-
                     </td>
+
                 </tr>
             <% }) %>
             </tbody>
-        </table></div>
+        </table>
 
-
-
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.js"></script>
-    <script src="/bootstrap/js/bootstrap.js"></script>
-    <script>
-        $(function () {
-            $('.popover-contenido').popover({
-                container: 'body'
-            })
-        })
-        //escuchar cambios del select de paises
-        const etiquetaSelectPaises = document.getElementById('paises');
-        const etiquetaSelectCiudades = document.getElementById('ciudades');
-        let valorActualPais = 0;
-        const ciudades = [
-            {
-                idPais:1,
-                nombre:'Quito',
-                id:1
-            },
-            {
-                idPais:2,
-                nombre:'Lima',
-                id:2,
-            },
-            {
-                idPais:3,
-                nombre:'Bogota',
-                id:3
-            },
-            {
-                idPais:4,
-                nombre:'Sao Paolo',
-                id:4
-            }
-        ]
-        etiquetaSelectPaises.onchange =(evento)=>{
-            valorActualPais = etiquetaSelectPaises.value;
-            console.log('valor actual del pais',valorActualPais)
-
-            const ciudadEncontrada = ciudades
-                .filter(
-                    (ciudad) => {
-                        return ciudad.idPais === +valorActualPais
-                    }
-                )
-            console.log('ciudades encontradas')
-        }
-
-        //traer las ciudades con ese id
-
-        //popular el select de ciudades
-
-    </script>
-
+    </div>
+    <div class="col-md-2"></div>
 </div>
-
-
-</body>
-</html>
-
-
-
-
+</div>
+<% include ./comunes/librerias.ejs %>
+<% include ./comunes/footer.ejs %>

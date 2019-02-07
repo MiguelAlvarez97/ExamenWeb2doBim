@@ -123,7 +123,7 @@
   }
   /**
    * --------------------------------------------------------------------------
-   * publico Util Api
+   * Public Util Api
    * --------------------------------------------------------------------------
    */
 
@@ -261,7 +261,7 @@
 
     var _proto = Alert.prototype;
 
-    // publico
+    // Public
     _proto.close = function close(element) {
       var rootElement = this._element;
 
@@ -429,7 +429,7 @@
 
     var _proto = Button.prototype;
 
-    // publico
+    // Public
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
@@ -650,7 +650,7 @@
 
     var _proto = Carousel.prototype;
 
-    // publico
+    // Public
     _proto.next = function next() {
       if (!this._isSliding) {
         this._slide(Direction.NEXT);
@@ -1222,7 +1222,7 @@
 
     var _proto = Collapse.prototype;
 
-    // publico
+    // Public
     _proto.toggle = function toggle() {
       if ($(this._element).hasClass(ClassName$3.SHOW)) {
         this.hide();
@@ -1595,7 +1595,7 @@
 
     var _proto = Dropdown.prototype;
 
-    // publico
+    // Public
     _proto.toggle = function toggle() {
       if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED)) {
         return;
@@ -2096,7 +2096,7 @@
 
     var _proto = Modal.prototype;
 
-    // publico
+    // Public
     _proto.toggle = function toggle(relatedTarget) {
       return this._isShown ? this.hide() : this.show(relatedTarget);
     };
@@ -2709,7 +2709,7 @@
 
     var _proto = Tooltip.prototype;
 
-    // publico
+    // Public
     _proto.enable = function enable() {
       this._isEnabled = true;
     };
@@ -3536,7 +3536,7 @@
 
     var _proto = ScrollSpy.prototype;
 
-    // publico
+    // Public
     _proto.refresh = function refresh() {
       var _this2 = this;
 
@@ -3816,7 +3816,7 @@
 
     var _proto = Tab.prototype;
 
-    // publico
+    // Public
     _proto.show = function show() {
       var _this = this;
 
@@ -4054,7 +4054,7 @@
 
     var _proto = Toast.prototype;
 
-    // publico
+    // Public
     _proto.show = function show() {
       var _this = this;
 

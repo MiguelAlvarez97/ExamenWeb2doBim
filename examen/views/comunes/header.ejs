@@ -1,0 +1,76 @@
+<% const tieneTitulo = typeof titulo !== 'undefined'; %>
+<% const esUsuarioLocal = typeof esUsuario !== 'undefined'; %>
+<% const esAdministradorLocal = typeof esAdministrador !== 'undefined'; %>
+
+
+<!doctype html>
+<html lang="es">
+<head>
+    <title><%= tieneTitulo ? titulo : 'ezFood' %></title>
+    <% include head.ejs %>
+</head>
+<style>
+    body {
+        background: url(http://i.imgur.com/eHZWy2I.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #464646;
+    }
+</style>
+<body style="background-color: whitesmoke;">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/"><img src="/pizza.png" alt="Avatar" class="avatar" style="width: 10%;height: 10%">
+        EzFood</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul   class="navbar-nav ml-auto">
+            <% if (esAdministradorLocal){ %>
+                <a class="nav-link" href="/usuario/listar"  role="button"
+                   aria-haspopup="true" aria-expanded="false">
+                    Usuarios
+                </a>
+            <%}%>
+            <li class="nav-item dropdown">
+                <% if (esUsuarioLocal){ %>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Tu cuenta
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/comida/registrar">Registrar Comida</a>
+                        <a class="dropdown-item" href="/ingrediente/registrar">Registrar Ingrediente</a>
+                        <a class="dropdown-item" href="/evento/registrar">Registrar Evento</a>
+                        <a class="dropdown-item" href="/usuario/logout">Salir</a>
+                    </div>
+                    <%}else {%>
+                    <%if (!esAdministradorLocal){  %>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Empezar
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/usuario/registrarse">Registrarse</a>
+                        <a class="dropdown-item" href="/usuario/login">Ingresar</a>
+                    </div>
+                    <% }else {%>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Tu cuenta
+                        </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/usuario/logout">Salir</a>
+                    <% }%>
+                <%}%>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>

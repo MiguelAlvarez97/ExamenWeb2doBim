@@ -1,19 +1,10 @@
-import {Column, Index, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import{rolUsuarioEntity} from "../RolesPorUsuario/RolesPorUsuario.entity"
+import {Entity, OneToMany, ManyToMany, JoinTable} from "typeorm";
+import {Column,PrimaryGeneratedColumn} from "typeorm";
 
 @Entity('rol')
 export class RolEntity {
-
     @PrimaryGeneratedColumn()
-    rolId: number;
-
+    id:number;
     @Column()
-    tipoRol: string;
-/*
-    @OneToMany(
-        type => rolUsuarioEntity,  // Que tabla vamos a relacionar
-        rolUsuario => rolUsuario.roles  // Campo que hace referencia FK
-    )
-    RolesUsr: rolUsuarioEntity[];
-*/
+    nombre:string;
 }

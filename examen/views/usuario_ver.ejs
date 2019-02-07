@@ -1,0 +1,96 @@
+<% include ./comunes/header.ejs %>
+<% const existeMensaje = typeof mensaje !== "undefined" ? true : false; %>
+
+<div class="container">
+<div class="row" style="padding-top: 100px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 border bg-dark text-white" id="contenido">
+        <% if(existeMensaje){ %>
+                <div class="animated fadeOut alert alert-danger" role="alert">
+                    MENSAJE: <%= mensaje %>
+                </div>
+            <% } %>
+        <h1>Informacion: </h1>
+        <!-- Modal Content -->
+        <div class="row" style="background-color: rgba(0, 0, 0, 0.7);">
+            <div class="col-md-4">
+                <h2 class="titulo">Usuario</h2>
+                <ul>
+                    <li><%= usuario.nombre %></li>
+                    <li><%= usuario.correo %></li>
+                    <li><%= usuario.fecha_nacimiento %></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="titulo">Roles del usuario</h2>
+                <ul>
+                    <% usuario.roles.forEach((rol)=>{ %>
+                        <li>
+                            <form action="/usuario/eliminar-rol/<%= usuario.id %>/<%= rol.id %>" method="post">
+                                <button  type="submit"
+                                        class="btn btn-danger btn-espaciado"><%= rol.nombre %> <strong>X</strong>
+                                </button>
+                            </form>
+
+                    <%})%>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="titulo">Agregar un rol</h2>
+                <form action="/usuario/agregar-rol/<%= usuario.id %>/" method="post">
+                    <div class="form-group">
+                        <label for="roles">Roles Disponibles</label>
+                        <select class="form-control"
+                                name="roles"
+                                id="roles" required>
+                        </select>
+                    </div>
+                    <button type="submit"
+                            class="btn btn-outline-danger btn-block btn-espaciado"
+                    >Agregar Rol
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+</div>
+<% include ./comunes/librerias.ejs %>
+<script>
+    let etiquerasSelectRoles = document.getElementById('roles')
+        const url = 'http://localhost:3000/rol/listar';
+        $.get(
+            url, // URL
+            (datos) => {  // Callback
+                console.log(datos)
+                const arregloRoles = datos;
+                matarHijos();
+                llenarCiudades(arregloRoles);
+            }
+        )
+
+
+
+
+    function llenarCiudades(arregloRoles) {
+        arregloRoles
+            .forEach(
+                (rol) => {
+                    const nuevaOption = document.createElement('option');
+                    nuevaOption.value = rol.id;
+                    nuevaOption.innerText = rol.nombre;
+                    nuevaOption.localName = 'rol'
+                    etiquerasSelectRoles.appendChild(nuevaOption);
+                }
+            )
+    }
+
+    function matarHijos() { //AKA eliminarLasOpciones
+        while (etiquerasSelectRoles.firstChild) {
+            etiquerasSelectRoles.removeChild(etiquerasSelectRoles.firstChild);
+        }
+    }
+</script>
+<% include ./comunes/footer.ejs %>
