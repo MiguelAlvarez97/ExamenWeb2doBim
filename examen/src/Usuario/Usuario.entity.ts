@@ -1,7 +1,7 @@
 import {Entity, ManyToMany, JoinTable, OneToMany} from "typeorm";
 import {Column,PrimaryGeneratedColumn} from "typeorm";
 import {RolEntity} from "../rol/rol.entity";
-import {ComidaEntity} from "../entrenador/comida.entity";
+import {EntrenadorEntity} from "../entrenador/entrenador.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {
@@ -16,11 +16,11 @@ export class UsuarioEntity {
     @Column()
     fecha_nacimiento:string;
     @OneToMany(
-        type => ComidaEntity,
+        type => EntrenadorEntity,
         // @ts-ignore
-        comida => comida.usuario
+        entrenador => entrenador.usuario
     )
-    comidas:ComidaEntity[];
+    entrenadores:EntrenadorEntity[];
 
 
     @ManyToMany(type => RolEntity)

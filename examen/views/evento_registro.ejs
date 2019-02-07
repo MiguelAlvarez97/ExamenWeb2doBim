@@ -25,11 +25,11 @@
             <input  class="form-control"
                     id="longitud" type="text" placeholder="Ingresa la longitud" name="longitud" required>
 
-        <!--    <label for="ingredientes"><b>Ingredientes</b></label>
-            <div class="form-check" id="contenido_ingredientes">
+            <label for="pokemones"><b>Pokemones</b></label>
+            <div class="form-check" id="contenido_pokemones">
 
             </div>
--->
+
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
         </form>
@@ -41,27 +41,27 @@
 <% include ./comunes/librerias.ejs %>
 <script>
 
-    let contenido = $("#contenido_ingredientes");
+    let contenido = $("#contenido_pokemones");
     const url = 'http://localhost:3000/pokemon/listar';
     $.get(
         url, // URL
         (datos) => {  // Callback
             console.log(datos)
-            const arregloIngredientes = datos;
+            const arregloPokemones = datos;
             contenido.empty()
-            llenarIngredientes(arregloIngredientes);
+            llenarPokemones(arregloPokemones);
         }
     )
 
 
-    function llenarIngredientes(arregloIngredientes) {
-        arregloIngredientes
+    function llenarPokemones(arregloPokemones) {
+        arregloPokemones
             .forEach(
-                (ingrediente) => {
+                (pokemon) => {
                     let html =`
-                <input class="form-check-input" name="ingredientes" type="checkbox" value=${ingrediente.id} id="${ingrediente.id}">
-                    <label class="form-check-label" for="${ingrediente.id}">
-                        ${ingrediente.nombrePokemon}
+                <input class="form-check-input" name="pokemones" type="checkbox" value=${pokemon.id} id="${pokemon.id}">
+                    <label class="form-check-label" for="${pokemon.id}">
+                        ${pokemon.nombrePokemon}
                     </label>
                 <br>`
                     contenido.append(html);

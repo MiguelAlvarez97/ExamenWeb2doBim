@@ -3,6 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="331cf833-9d3b-485f-80c1-086912d9e0f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/Usuario/Usuario.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/Usuario/Usuario.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/entrenador/comida.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/entrenador/entrenador.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/entrenador/comida.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/entrenador/entrenador.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/entrenador/comida.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/entrenador/entrenador.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/entrenador/comida.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/entrenador/entrenador.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/evento/evento.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/evento/evento.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/evento/evento.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/evento/evento.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/evento/evento.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/evento/evento.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/pokemon/pokemon.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/pokemon/pokemon.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/pokemon/pokemon.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/pokemon/pokemon.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/src/pokemon/pokemon.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/examen/src/pokemon/pokemon.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/views/comunes/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/examen/views/comunes/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/views/entrenador_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/examen/views/entrenador_registro.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/views/evento_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/examen/views/evento_registro.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen/views/pokemon_registro.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/examen/views/pokemon_registro.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,30 +70,30 @@
     <session id="-605411320">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ejs" value="3" />
+          <entry key="ejs" value="9" />
           <entry key="gitignore" value="1" />
           <entry key="json" value="3" />
-          <entry key="ts" value="26" />
+          <entry key="ts" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="EJS" value="3" />
+          <entry key="EJS" value="9" />
           <entry key="JSON" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="26" />
+          <entry key="TypeScript" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ejs" value="388" />
-          <entry key="ts" value="1133" />
+          <entry key="ejs" value="763" />
+          <entry key="ts" value="2003" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="EJS" value="388" />
-          <entry key="TypeScript" value="1133" />
+          <entry key="EJS" value="763" />
+          <entry key="TypeScript" value="2003" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -88,12 +104,89 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examen/views/inicio.ejs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3900">
-              <caret line="160" column="29" selection-start-line="160" selection-start-column="29" selection-end-line="160" selection-end-column="29" />
+            <state relative-caret-position="6">
+              <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1118">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.entity.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examen/views/evento_registro.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.entity.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examen/src/app.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1300">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -106,6 +199,11 @@
         <option value="TypeScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>i</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,9 +243,23 @@
         <option value="$PROJECT_DIR$/examen/src/app.controller.ts" />
         <option value="$PROJECT_DIR$/examen/views/crear-usuario.ejs" />
         <option value="$PROJECT_DIR$/examen/src/Usuario/dto/create_Usuario.dto.ts" />
-        <option value="$PROJECT_DIR$/examen/src/app.module.ts" />
         <option value="$PROJECT_DIR$/examen/src/Usuario/Usuario.controller.ts" />
         <option value="$PROJECT_DIR$/examen/views/inicio.ejs" />
+        <option value="$PROJECT_DIR$/examen/src/pokemon/pokemon.controller.ts" />
+        <option value="$PROJECT_DIR$/examen/src/pokemon/pokemon.service.ts" />
+        <option value="$PROJECT_DIR$/examen/src/pokemon/pokemon.entity.ts" />
+        <option value="$PROJECT_DIR$/examen/views/entrenador_registro.ejs" />
+        <option value="$PROJECT_DIR$/examen/src/entrenador/entrenador.service.ts" />
+        <option value="$PROJECT_DIR$/examen/src/entrenador/entrenador.controller.ts" />
+        <option value="$PROJECT_DIR$/examen/src/usuario/usuario.entity.ts" />
+        <option value="$PROJECT_DIR$/examen/src/evento/evento.service.ts" />
+        <option value="$PROJECT_DIR$/examen/src/evento/evento.entity.ts" />
+        <option value="$PROJECT_DIR$/examen/src/evento/evento.controller.ts" />
+        <option value="$PROJECT_DIR$/examen/src/app.module.ts" />
+        <option value="$PROJECT_DIR$/examen/src/entrenador/entrenador.entity.ts" />
+        <option value="$PROJECT_DIR$/examen/views/comunes/header.ejs" />
+        <option value="$PROJECT_DIR$/examen/views/pokemon_registro.ejs" />
+        <option value="$PROJECT_DIR$/examen/views/evento_registro.ejs" />
       </list>
     </option>
   </component>
@@ -526,7 +638,6 @@
       <path value="$PROJECT_DIR$/examen/node_modules/is-typedarray/package.json" />
       <path value="$PROJECT_DIR$/examen/node_modules/is-utf8/package.json" />
       <path value="$PROJECT_DIR$/examen/node_modules/is-windows/package.json" />
-      <path value="$PROJECT_DIR$/examen/node_modules/is-wsl/package.json" />
       <path value="$PROJECT_DIR$/examen/node_modules/isarray/package.json" />
       <path value="$PROJECT_DIR$/examen/node_modules/isexe/package.json" />
       <path value="$PROJECT_DIR$/examen/node_modules/isobject/node_modules/isarray/package.json" />
@@ -1031,10 +1142,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="1929" />
+    <option name="y" value="-30" />
+    <option name="width" value="1944" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -1061,12 +1172,6 @@
               <item name="ExamenWeb2doBim" type="b2602c69:ProjectViewProjectNode" />
               <item name="ExamenWeb2doBim" type="462c0819:PsiDirectoryNode" />
               <item name="examen" type="462c0819:PsiDirectoryNode" />
-              <item name="publico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExamenWeb2doBim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExamenWeb2doBim" type="462c0819:PsiDirectoryNode" />
-              <item name="examen" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1074,15 +1179,14 @@
               <item name="ExamenWeb2doBim" type="462c0819:PsiDirectoryNode" />
               <item name="examen" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Usuario" type="462c0819:PsiDirectoryNode" />
+              <item name="evento" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExamenWeb2doBim" type="b2602c69:ProjectViewProjectNode" />
               <item name="ExamenWeb2doBim" type="462c0819:PsiDirectoryNode" />
               <item name="examen" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Usuario" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExamenWeb2doBim" type="b2602c69:ProjectViewProjectNode" />
@@ -1132,13 +1236,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17082000" />
+    <option name="totallyTimeSpent" value="22785000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1913" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14002642" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2573471" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1150,7 +1254,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25329816" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31869918" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1172,69 +1276,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.controller.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.controller.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.entity.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.module.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.service.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.controller.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.entity.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.module.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.service.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/rol/rol.controller.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.entity.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/rol/rol.service.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Campeonatos/Campeonatos.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Entrenador/Entrenador.controller.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Entrenador/Entrenador.entity.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Entrenador/Entrenador.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Entrenador/Entrenador.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.controller.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.entity.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/EventoPorHijo/EventoPorHijo.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Pokemon/Pokemon.controller.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Pokemon/Pokemon.entity.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Pokemon/Pokemon.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Pokemon/Pokemon.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Rol/Rol.controller.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Rol/Rol.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.controller.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.controller.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.module.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.service.ts" />
     <entry file="file://$PROJECT_DIR$/examen/src/app.controller.spec.ts" />
     <entry file="file://$PROJECT_DIR$/examen/src/app.service.ts">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1256,72 +1314,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Rol/Rol.entity.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/rol/rol.entity.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Rol/Rol.module.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/rol/rol.module.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Usuario/Usuario.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/examen/src/usuario/usuario.module.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.entity.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/app.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-          <folding>
-            <element signature="e#0#175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/views/crear-usuario.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Usuario/dto/create_Usuario.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Usuario/Usuario.entity.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/RolesPorUsuario/RolesPorUsuario.entity.ts" />
+    <entry file="file://$PROJECT_DIR$/examen/views/crear-usuario.ejs" />
+    <entry file="file://$PROJECT_DIR$/examen/src/usuario/dto/create_Usuario.dto.ts" />
     <entry file="file://$PROJECT_DIR$/examen/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -1329,7 +1337,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Usuario/Usuario.controller.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/usuario/usuario.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="121" column="10" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
@@ -1339,7 +1347,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examen/src/Usuario/Usuario.service.ts">
+    <entry file="file://$PROJECT_DIR$/examen/src/usuario/usuario.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1508">
           <caret line="58" column="50" lean-forward="true" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
@@ -1349,20 +1357,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/entrenador/entrenador.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/entrenador/entrenador.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1274">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/usuario/usuario.entity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/entrenador/entrenador.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/views/entrenador_registro.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="37" column="73" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examen/src/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="117">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/entrenador/entrenador.entity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/app.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examen/views/inicio.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3900">
-          <caret line="160" column="29" selection-start-line="160" selection-start-column="29" selection-end-line="160" selection-end-column="29" />
+        <state relative-caret-position="1118">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/views/comunes/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="46" column="96" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/views/pokemon_registro.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="91" column="34" lean-forward="true" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.entity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/evento/evento.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/src/pokemon/pokemon.entity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examen/views/evento_registro.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
         </state>
       </provider>
     </entry>

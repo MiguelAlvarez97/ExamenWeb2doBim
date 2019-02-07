@@ -1,6 +1,6 @@
 import {Entity, ManyToMany, ManyToOne} from "typeorm";
 import {PrimaryGeneratedColumn,Column, OneToMany} from "typeorm";
-import {ComidaEntity} from "../entrenador/comida.entity";
+import {EntrenadorEntity} from "../entrenador/entrenador.entity";
 import {EventoEntity} from "../evento/evento.entity";
 
 
@@ -9,23 +9,25 @@ export class PokemonEntity {
     @PrimaryGeneratedColumn()
     id:number;
     @Column()
+    numeroPokemon:number;
+    @Column()
     nombrePokemon:string;
+    @Column()
+    tipoPokemon:string;
     @Column()
     nivel:number;
     @Column()
-    descripcionPreparacion:string;
+    poderEspecial1:string;
     @Column()
-    opcional:boolean;
+    poderEspecial2:string;
     @Column()
-    tipoIngrediente:string;
-    @Column()
-    necesitaRefrigeracion:boolean;
+    fecha_captura:string;
     @ManyToOne(
-        type => ComidaEntity,
+        type => EntrenadorEntity,
         // @ts-ignore
-        comida => comida.ingredientes
+        entrenador => entrenador.pokemones
     )
-    comida:ComidaEntity;
-    @ManyToMany(type => EventoEntity, evento => evento.ingredientes)
+    entrenador:EntrenadorEntity;
+    @ManyToMany(type => EventoEntity, evento => evento.pokemones)
     eventos: EventoEntity[];
 }

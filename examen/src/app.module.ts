@@ -5,10 +5,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {UsuarioEntity} from "./usuario/usuario.entity";
 import {PokemonEntity} from "./pokemon/pokemon.entity";
 import {EventoEntity} from "./evento/evento.entity";
-import {ComidaEntity} from "./entrenador/comida.entity";
+import {EntrenadorEntity} from "./entrenador/entrenador.entity";
 import {RolEntity} from "./rol/rol.entity";
 import {UsuarioModule} from "./usuario/usuario.module";
-import {ComidaModule} from "./entrenador/comida.module";
+import {EntrenadorModule} from "./entrenador/entrenador.module";
 import {EventoModule} from "./evento/evento.module";
 
 @Module({
@@ -17,9 +17,9 @@ import {EventoModule} from "./evento/evento.module";
           {
               type: 'mysql',
               host: '192.168.99.100',
-              port: 32781,
+              port: 32791,
               database: 'entrenador',
-              username: 'edison',
+              username: 'examen',
               password: '123456',
               synchronize: true,
               dropSchema: false,
@@ -27,12 +27,12 @@ import {EventoModule} from "./evento/evento.module";
                     UsuarioEntity,
                     PokemonEntity,
                     EventoEntity,
-                    ComidaEntity,
+                    EntrenadorEntity,
                     RolEntity
                 ],
           }),
           UsuarioModule,
-          ComidaModule,
+          EntrenadorModule,
           EventoModule,
   ],
   controllers: [AppController],

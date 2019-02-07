@@ -3,7 +3,7 @@ import {PokemonEntity} from "./pokemon.entity";
 import {Column, PrimaryGeneratedColumn, Repository} from "typeorm";
 import {FindManyOptions} from "typeorm";
 import {InjectRepository} from '@nestjs/typeorm';
-import {ComidaEntity} from "../entrenador/comida.entity";
+import {EntrenadorEntity} from "../entrenador/entrenador.entity";
 import {RolEntity} from "../rol/rol.entity";
 
 
@@ -11,34 +11,36 @@ import {RolEntity} from "../rol/rol.entity";
 export class PokemonService {
     constructor(
         @InjectRepository(PokemonEntity)
-        private readonly _ingredienteRepository:Repository<PokemonEntity>
+        private readonly _pokemonRepository:Repository<PokemonEntity>
     ){
     }
 
-    async crear(nuevoIngrediente:Ingrediente):Promise<PokemonEntity> {
-        const ingredienteEntity = this._ingredienteRepository.create(nuevoIngrediente);
-        const ingredienteCreado = this._ingredienteRepository.save(ingredienteEntity);
-        return ingredienteCreado;
+    async crear(nuevoPokemon:Pokemon):Promise<PokemonEntity> {
+        const pokemonEntity = this._pokemonRepository.create(nuevoPokemon);
+        const pokemonCreado = this._pokemonRepository.save(pokemonEntity);
+        return pokemonCreado;
     }
 
     buscar(parametros?:FindManyOptions):Promise<PokemonEntity[]>{
-        return this._ingredienteRepository.find(parametros)
+        return this._pokemonRepository.find(parametros)
     }
 
     buscarPorId(id: number): Promise<PokemonEntity> {
-        return this._ingredienteRepository.findOne(id );
+        return this._pokemonRepository.findOne(id );
     }
 
 
 }
 
-export interface Ingrediente {
+export interface Pokemon {
     id?:number;
-    nombreIngrediente:string;
-    cantidad:number;
-    descripcionPreparacion:string;
-    opcional:boolean;
-    tipoIngrediente:string;
-    necesitaRefrigeracion:boolean;
-    comida:ComidaEntity;
+    numeroPokemon:number;
+    nombrePokemon:string;
+    tipoPokemon:string;
+    nivel:number;
+    poderEspecial1:string;
+    poderEspecial2:string;
+    fecha_captura:string;
+
+    entrenador:EntrenadorEntity;
 }

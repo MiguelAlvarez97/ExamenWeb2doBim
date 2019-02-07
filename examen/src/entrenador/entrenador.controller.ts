@@ -1,15 +1,15 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
-import {Comida, ComidaService} from "./comida.service";
+import {Entrenador, EntrenadorService} from "./entrenador.service";
 
-@Controller('comida')
-export class ComidaController {
+@Controller('entrenador')
+export class EntrenadorController {
     constructor(
-        private readonly _comidaService:ComidaService,
+        private readonly _entrenadorService:EntrenadorService,
         )
     {}
 
     @Get('registrar')
-    registrarComida(
+    registrarEntrenador(
         @Res() response,
         @Session() session
     )
@@ -28,20 +28,20 @@ export class ComidaController {
             admin = true
         }
         response.render(
-            'comida_registro',
+            'entrenador_registro',
             {
                 esUsuario:usuario,
                 esAdministrador:admin,
-                titulo:"Registrar Comida"
+                titulo:"Registrar Entrenador"
             }
             )
     }
 
     @Post('registrar')
-    async registrarComidaPost(
+    async registrarEntrenadorPost(
         @Res() response,
         @Session() session,
-        @Body() comida: Comida,
+        @Body() entrenador: Entrenador,
     ){
         if(!session.usuario){
             response.redirect("/")
@@ -50,15 +50,15 @@ export class ComidaController {
             response.redirect("/")
         }
 
-        comida.usuario = session.usuario.id;
-        const comida_nueva = await this._comidaService.crear(comida);
+        entrenador.usuario = session.usuario.id;
+        const entrenador_nuevo = await this._entrenadorService.crear(entrenador);
         response.redirect("/")
     }
 
     @Get('listar')
     async getRoles(
     ) {
-        return await this._comidaService.buscar();
+        return await this._entrenadorService.buscar();
     }
 
 

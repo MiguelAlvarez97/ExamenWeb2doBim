@@ -16,7 +16,7 @@ export class EventoEntity {
     longitud:number;
     @ManyToMany(type => PokemonEntity)
     @JoinTable({
-        name: "evento_ingredientes", // table name for the junction table of this relation
+        name: "evento_pokemones", // table name for the junction table of this relation
         joinColumn: {
             name: "evento",
             referencedColumnName: "id"
@@ -26,5 +26,5 @@ export class EventoEntity {
             referencedColumnName: "id"
         }
     })
-    ingredientes:PokemonEntity[];
+    pokemones:PokemonEntity[];
 }

@@ -9,7 +9,7 @@ import {In} from "typeorm";
 export class EventoController {
     constructor(
         private readonly _eventoService:EventoService,
-        private readonly _ingredienteService:PokemonService
+        private readonly _pokemonService:PokemonService
     )
     {}
 
@@ -44,11 +44,11 @@ export class EventoController {
     }
 
     @Post('registrar')
-    async registrarIngredientePost(
+    async registrarPokemonPost(
         @Res() response,
         @Session() session,
         @Body() evento: Evento,
-        @Body('ingredientes')ingredientes:[],
+        @Body('pokemones')pokemones:[],
     ){
         if(!session.usuario){
             response.redirect("/")
@@ -59,22 +59,22 @@ export class EventoController {
 
         console.log(evento);
         let parametro ={};
-        if(evento.ingredientes.length > 1) {
+        if(evento.pokemones.length > 1) {
             parametro = {
                 where: [
-                    {id: In(evento.ingredientes)},
+                    {id: In(evento.pokemones)},
                 ]
             }
         }else {
             parametro = {
                 where: [
-                    {id: evento.ingredientes},
+                    {id: evento.pokemones},
                 ]
             }
         }
-        const ingredientes_eventos = await this._ingredienteService.buscar(parametro);
-        evento.ingredientes = ingredientes_eventos;
-        console.log(ingredientes_eventos);
+        const pokemones_eventos = await this._pokemonService.buscar(parametro);
+        evento.pokemones = pokemones_eventos;
+        console.log(pokemones_eventos);
         const nuevo = await this._eventoService.crear(evento);
         response.redirect("/")
     }

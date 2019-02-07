@@ -1,15 +1,15 @@
 import {Body, Controller, Get, Param, Post, Query, Res, Session} from "@nestjs/common";
-import {Ingrediente, PokemonService} from "./pokemon.service";
+import {Pokemon, PokemonService} from "./pokemon.service";
 
 @Controller('pokemon')
 export class PokemonController {
     constructor(
-        private readonly _ingredienteService:PokemonService,
+        private readonly _pokemonService:PokemonService,
     )
     {}
 
     @Get('registrar')
-    registrarIngrediente(
+    registrarPokemon(
         @Res() response,
         @Session() session
     )
@@ -33,20 +33,20 @@ export class PokemonController {
         }
 
         response.render(
-            'ingrediente_registro',
+            'pokemon_registro',
             {
                 esUsuario:usuario,
                 esAdministrador:admin,
-                titulo:"Registrar Ingrediente"
+                titulo:"Registrar Pokemon"
             }
         )
     }
 
     @Post('registrar')
-    async registrarIngredientePost(
+    async registrarPokemonPost(
         @Res() response,
         @Session() session,
-        @Body() ingrediente: Ingrediente,
+        @Body() pokemon: Pokemon,
     ){
 
         if(!session.usuario){
@@ -55,15 +55,15 @@ export class PokemonController {
         if(session.usuario.esAdministrador && !session.usuario.esUsuario){
             response.redirect("/")
         }
-        console.log(ingrediente);
-        const ingrediente_nueva = await this._ingredienteService.crear(ingrediente);
+        console.log(pokemon);
+        const pokemon_nueva = await this._pokemonService.crear(pokemon);
         response.redirect("/")
     }
 
     @Get('listar')
     async getRoles(
     ) {
-        return await this._ingredienteService.buscar();
+        return await this._pokemonService.buscar();
     }
 
 

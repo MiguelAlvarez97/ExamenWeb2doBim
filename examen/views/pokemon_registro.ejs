@@ -29,13 +29,21 @@
             <input class="form-control"
                    id="poderEspecial2" type="text" placeholder="Ingresa el poder especial 2" name="poderEspecial2" required>
 
-            <label for="fecha_captura"><b>Fecha Nacimiento</b></label>
+            <label for="fecha_captura"><b>Fecha de Captura</b></label>
             <input class="form-control"
                    id="fecha_captura" type="date" placeholder="Ingresa la fecha de captura" name="fecha_captura" required>
 
             <label for="nivel"><b>Nivel</b></label>
             <input class="form-control"
                    id="nivel" type="number" placeholder="Ingresa el nivel del Pokemon" name="nivel" required>
+
+            <div class="form-group">
+                <label for="entrenador">Entrenador</label>
+                <select class="form-control"
+                        name="entrenador"
+                        id="entrenador" required>
+                </select>
+            </div>
 
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
@@ -47,37 +55,37 @@
 </div>
 <% include ./comunes/librerias.ejs %>
 <script>
-    let etiquerasSelectComidas = document.getElementById('entrenador')
+    let etiquerasSelectEntreenadores = document.getElementById('entrenador')
     const url = 'http://localhost:3000/entrenador/listar';
     $.get(
         url, // URL
         (datos) => {  // Callback
             console.log(datos)
-            const arregloComidas = datos;
+            const arregloEntrenadores = datos;
             matarHijos();
-            llenarComidas(arregloComidas);
+            llenarEntrenadores(arregloEntrenadores);
         }
     )
 
 
 
 
-    function llenarComidas(arregloComidas) {
-        arregloComidas
+    function llenarEntrenadores(arregloEntrenadores) {
+        arregloEntrenadores
             .forEach(
-                (comida) => {
+                (entrenador) => {
                     const nuevaOption = document.createElement('option');
-                    nuevaOption.value = comida.id;
-                    nuevaOption.innerText = comida.nombrePlato;
-                    nuevaOption.localName = 'comida_nombre'
-                    etiquerasSelectComidas.appendChild(nuevaOption);
+                    nuevaOption.value = entrenador.id;
+                    nuevaOption.innerText = entrenador.nombreEntrenador;
+                    nuevaOption.localName = 'entrenador_nombre'
+                    etiquerasSelectEntreenadores.appendChild(nuevaOption);
                 }
             )
     }
 
     function matarHijos() { //AKA eliminarLasOpciones
-        while (etiquerasSelectComidas.firstChild) {
-            etiquerasSelectComidas.removeChild(etiquerasSelectComidas.firstChild);
+        while (etiquerasSelectEntreenadores.firstChild) {
+            etiquerasSelectEntreenadores.removeChild(etiquerasSelectEntreenadores.firstChild);
         }
     }
 </script>

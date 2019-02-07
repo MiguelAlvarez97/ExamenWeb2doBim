@@ -4,30 +4,30 @@ import {PokemonEntity} from "../pokemon/pokemon.entity";
 import {UsuarioEntity} from "../usuario/usuario.entity";
 
 
-@Entity('comida')
-export class ComidaEntity {
+@Entity('entrenador')
+export class EntrenadorEntity {
     @PrimaryGeneratedColumn()
     id:number;
     @Column()
-    nombrePlato:string;
+    nombreEntrenador:string;
     @Column()
-    descripcionPlato:string;
+    apellidoEntrenador:string;
     @Column()
-    nacionalidad:string;
+    fecha_nacimiento:string;
     @Column()
-    numeroPersonas:string;
+    numeroMedallas:number;
     @Column()
-    picante:boolean;
+    campeon:boolean;
     @ManyToOne(
         type => UsuarioEntity,
-        usuario => usuario.comidas
+        usuario => usuario.entrenadores
     )
     usuario:UsuarioEntity;
 
     @OneToMany(
         type => PokemonEntity,
         // @ts-ignore
-        ingrediente => ingrediente.comidas
+        pokemon => pokemon.entrenadores
     )
-    ingredientes:PokemonEntity[];
+    pokemones:PokemonEntity[];
 }
