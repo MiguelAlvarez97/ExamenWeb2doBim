@@ -4,10 +4,10 @@
 <div class="container">
 <div class="row" style="padding-top: 100px;">
     <div class="col-md-2"></div>
-    <div class="col-md-8 bg-dark text-white" id="contenido">
+    <div class="col-md-8 text-white" id="contenido" style="background-color: rgba(122,170,219,0.9)">
         <h1>Usuarios: </h1>
         <form action="/usuario/listar" method="get">
-            <div class="row text-white"  style="background-color: rgba(0, 0, 0, 0.7);">
+            <div class="row text-white"  style="background-color: rgba(122,170,219,0.9);">
                 <div class="col-sm-9 text-dark">
                     <div class="form-group">
                         <label for="busqueda">Buscar</label>
@@ -21,7 +21,7 @@
 
                 </div>
                 <div class="col-sm-3">
-                    <button class="btn btn-dark btn-block btn-buscar"
+                    <button class="btn btn-secondary btn-block btn-buscar"
                             type="submit">Buscar
                     </button>
                 </div>
@@ -35,7 +35,7 @@
 
 <div class="row" >
     <div class="col-md-2"></div>
-    <div class="col-md 8 text-white" style="background-color: rgba(0, 0, 0, 0.7);" >
+    <div class="col-md 8 text-white" style="background-color: rgba(56,114,173,0.8);" >
 
         <table class="table table-hover animated fadeInUp">
             <caption>Lista de usuarios</caption>
@@ -68,7 +68,7 @@
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title titulo">Confirmar</h4>
+                                        <h4 class="modal-title titulo amarillo">Confirmar</h4>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
@@ -79,8 +79,6 @@
                                     <div class="modal-footer" style="background-color: black;">
                                         <form action="/usuario/borrar/<%= usuario.id %>"
                                               method="post">
-                                            <!--<button type="button">Yo no</button>-->
-                                            <!--<button>Yo si</button>-->
                                             <button type="submit"
                                                     class="btn btn-outline-danger btn-block btn-espaciado"
                                                     >Eliminar
@@ -94,7 +92,8 @@
                         </div>
                             <a class="quitar-decoracion" href="/usuario/actualizar/<%= usuario.id %>">
                                 <button class="btn btn-outline-success btn-block btn-espaciado"
-                                        type="button">
+                                        type="button"
+                                        style="background-color: #8fd19e">
                                     Actualizar
                                 </button>
                             </a>

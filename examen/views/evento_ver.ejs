@@ -1,44 +1,36 @@
 <% include ./comunes/header.ejs %>
 <div class="container">
 <div class="row" style="padding-top: 100px;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 border bg-dark" id="contenido" >
+    <div class="col-md-1"></div>
+    <div class="col-md-10 border" style="background-color: rgba(56,114,173,0.8) ;" id="contenido" >
 
         <h1 class="text-white "><%= evento.nombre %></h1>
         <!-- Modal Content -->
-        <div class="row" style="background-color: rgba(0, 0, 0, 0.7);">
-            <div class="col-md-6 text-white">
+        <div class="row" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="col-md-4 text-white">
                 <h2 class="titulo">Detalles</h2>
                 <ul>
-                    <li  class="list-group-item list-group-item-action bg-success text-white"><%= evento.nombre %></li>
-                    <li  class="list-group-item list-group-item-action"><strong>Fecha: </strong><%= evento.fecha %></li>
+                    <li  class="list-group-item list-group-item-action  text-white" style="background-color: #9fcdff ;"><%= evento.nombre %></li>
+                    <li  class="list-group-item list-group-item-action" ><strong>Fecha: </strong><%= evento.fecha %></li>
                     <li  class="list-group-item list-group-item-action"><strong>Latitud: </strong><%= evento.latitud %></li>
                     <li  class="list-group-item list-group-item-action"><strong>Longitud: </strong><%= evento.longitud %></li>
 
                 </ul>
-                <h2 class="titulo">Localizacion del Evento</h2>
-                <div style="width: 100%;background-color: rgba(0, 0, 0, 0.7);">
-                    <iframe width="100%" height="600"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50454.43880415382!2d-78.4760832!3d-0.1343488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sec!4v1549524219494" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    <br/>
+                <br/>
+                <img src="/Chancy.jpg" style="width: 80%; -webkit-transform: scaleX(-1);transform: scaleX(-1);" alt="">
 
             </div>
 
-                <div style="width: 100%;background-color: rgba(0, 0, 0, 0.7);">
-                    <iframe width="100%" height="600"
-                            src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Create route map</a></iframe></div><br />
-
-            </div>
-
-            <div class="col-md-6 list-group text-white">
+            <div class="col-md-4 list-group text-white">
                 <h2 class="titulo">Pokemones</h2>
 
                     <% evento.pokemones.forEach((pokemon)=>{ %>
                 <ul>
-                        <li  class="list-group-item list-group-item-action active bg-dark animated fadeInDown"><strong><%= pokemon.nombrePokemon %></strong></li>
-                        <li  class="list-group-item list-group-item-action animated fadeInLeft"><strong>Poder Especial: </strong><%= pokemon.poderEspecial1 %></li>
-                        <li  class="list-group-item list-group-item-action animated fadeInLeft"><strong>Poder Especial: </strong><%= pokemon.poderEspecial2 %></li>
-                        <li  class="list-group-item list-group-item-action bg-success animated fadeInUpBig text-white"><strong>Tipo: </strong><%= pokemon.tipoPokemon %></li>
+                        <li  class="list-group-item list-group-item-action active bg-dark "><strong><%= pokemon.nombrePokemon %> <img style="width: 22%; position: relative; top: 1%; right: -45% " src="/<%= pokemon.nombrePokemon %>.jpg" alt=""></strong></li>
+                        <!--<li><img src="/<%= pokemon.nombrePokemon %>.jpg" alt=""></li>-->
+                        <li  class="list-group-item list-group-item-action "><strong>Poder Especial: </strong><%= pokemon.poderEspecial1 %></li>
+                        <li  class="list-group-item list-group-item-action "><strong>Poder Especial: </strong><%= pokemon.poderEspecial2 %></li>
+                        <li  class="list-group-item list-group-item-action "><strong>Tipo: </strong><%= pokemon.tipoPokemon %></li>
                 </ul>
                 <br>
                 <%})%>
@@ -46,10 +38,24 @@
 
 
             </div>
+
+            <div class="col-md-4 text-white">
+                <h2 class="titulo">Localizacion del Evento</h2>
+                <div style="width: 100%;background-color: rgba(0, 0, 0, 0.7);">
+                    <iframe width="100%" class="animated zoomInLeft" height="400"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50454.43880415382!2d-78.4760832!3d-0.1343488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sec!4v1549524219494" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <br/></div><br />
+                <a href="/" style="text-decoration: none">
+                    <button class="btn btn-info btn-block btn-espaciado"
+                    >Regresar</button>
+                </a>
+            </div>
+
+
         </div>
 
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
 </div>
 
 </div>

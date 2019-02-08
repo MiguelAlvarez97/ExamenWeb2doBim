@@ -2,8 +2,10 @@
 <% include ./comunes/header.ejs %>
 <div class="container">
     <div class="row" style="padding-top: 100px;">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="col-md-4">
+        <img src="/liga.png" style=" width: 90%;margin-top: 10%;position: absolute " class="animated zoomInDown" alt="">
+    </div>
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
         <h1 class="titulo">Liga Pokemon</h1>
         <!-- Modal Content -->
         <form action="/evento/registrar" method="post">
@@ -15,7 +17,7 @@
 
             <label for="fecha"><b>Fecha del evento</b></label>
             <input class="form-control"
-                      id="fecha" type="date" placeholder="Fecha del evento" name="fecha" required>
+                      id="fecha" type="date" min="2019-02-08" placeholder="Fecha del evento" name="fecha" required>
 
             <label for="latitud"><b>Latitud</b></label>
             <input class="form-control"
@@ -33,6 +35,10 @@
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
         </form>
+        <a href="/" style="text-decoration: none">
+            <button class="btn btn-info btn-block btn-espaciado"
+            >Regresar</button>
+        </a>
     </div>
     <div class="col-md-4"></div>
 

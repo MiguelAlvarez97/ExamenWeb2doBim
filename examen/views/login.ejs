@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row" style="padding-top: 100px;">
     <div class="col-md-4"></div>
-    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(122, 170, 219, 0.5);">
         <% if(existeMensaje){ %>
             <div class="animated fadeInUp alert alert-danger" role="alert">
                 ERROR: <%= errores %>
@@ -24,6 +24,10 @@
             id="password" type="password" placeholder="Ingresa tu contraseña" name="password" required>
     <button style="margin-top: 10px; margin-bottom: 10px;" type="submit" class="btn btn-danger btn-block">Login</button>
     </form>
+            <a href="/usuario/registrarse" style="text-decoration: none">
+                <button class="btn btn-success btn-block btn-espaciado"
+                >Registrate</button>
+            </a>
 </div>
 <div class="col-md-4"></div>
 </div>

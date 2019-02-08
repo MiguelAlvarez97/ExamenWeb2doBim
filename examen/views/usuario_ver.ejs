@@ -12,7 +12,7 @@
             <% } %>
         <h1>Informacion: </h1>
         <!-- Modal Content -->
-        <div class="row" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="row" style="background-color: rgba(122,170,219,0.5);">
             <div class="col-md-4">
                 <h2 class="titulo">Usuario</h2>
                 <ul>
@@ -28,7 +28,7 @@
                         <li>
                             <form action="/usuario/eliminar-rol/<%= usuario.id %>/<%= rol.id %>" method="post">
                                 <button  type="submit"
-                                        class="btn btn-danger btn-espaciado"><%= rol.nombre %> <strong>X</strong>
+                                        class="btn btn-success btn-espaciado"><%= rol.nombre %> <strong>X</strong>
                                 </button>
                             </form>
 
@@ -46,10 +46,15 @@
                         </select>
                     </div>
                     <button type="submit"
-                            class="btn btn-outline-danger btn-block btn-espaciado"
+                            class="btn btn-outline-success btn-block btn-espaciado"
+                            style="background-color: #20c997"
                     >Agregar Rol
                     </button>
                 </form>
+                <a href="/usuario/listar" style="text-decoration: none">
+                    <button class="btn btn-info btn-block btn-espaciado"
+                            >Regresar</button>
+                </a>
             </div>
         </div>
 

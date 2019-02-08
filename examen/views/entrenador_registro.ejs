@@ -1,9 +1,11 @@
 
 <% include ./comunes/header.ejs %>
 <div class="container">
+
+
 <div class="row" style="padding-top: 100px">
     <div class="col-md-4"></div>
-    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="col-md-4 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
         <h1 class="titulo">Registro de Entrenador: </h1>
         <!-- Modal Content -->
         <form action="/entrenador/registrar" method="post">
@@ -19,7 +21,7 @@
 
             <label for="fecha_nacimiento"><b>Fecha Nacimiento</b></label>
             <input class="form-control"
-                   id="fecha_nacimiento" type="date" placeholder="Ingresa la Fecha de Nacimiento" name="fecha_nacimiento" required>
+                   id="fecha_nacimiento" type="date" max="2019-02-08" min="1950-01-01" placeholder="Ingresa la Fecha de Nacimiento" name="fecha_nacimiento" required>
 
             <label for="numeroMedallas"><b>Numero de Medallas</b></label>
             <input class="form-control"
@@ -42,8 +44,12 @@
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
         </form>
+        <a href="/" style="text-decoration: none">
+            <button class="btn btn-info btn-block btn-espaciado"
+            >Regresar</button>
+        </a>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4"><img src="/ash.png" style="position: absolute;  width: 70% " class="animated fadeInRight" alt=""></div>
 
 </div>
 </div>

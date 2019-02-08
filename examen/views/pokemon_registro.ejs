@@ -2,8 +2,10 @@
 <% include ./comunes/header.ejs %>
 <div class="container">
     <div class="row" style="padding-top: 100px">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 border text-white" id="contenido" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="col-md-4">
+        <img src="/pokedex1.png" style="position: absolute; padding-right: 30%;  " alt="">
+    </div>
+    <div class="col-md-6 border text-white" id="contenido" style="background-color: rgba(56,114,173,0.7);">
         <h1 class="titulo">Registro de Pokemon: </h1>
         <!-- Modal Content -->
         <form action="/pokemon/registrar" method="post">
@@ -31,7 +33,7 @@
 
             <label for="fecha_captura"><b>Fecha de Captura</b></label>
             <input class="form-control"
-                   id="fecha_captura" type="date" placeholder="Ingresa la fecha de captura" name="fecha_captura" required>
+                   id="fecha_captura" type="date" max="2019-02-08" placeholder="Ingresa la fecha de captura" name="fecha_captura" required>
 
             <label for="nivel"><b>Nivel</b></label>
             <input class="form-control"
@@ -48,10 +50,12 @@
             <button style="margin-top: 20px; margin-bottom: 20px;" type="submit" class="btn btn-success btn-block">Registrar</button>
 
         </form>
+        <a href="/" style="text-decoration: none">
+            <button class="btn btn-info btn-block btn-espaciado"
+            >Regresar</button>
+        </a>
     </div>
-    <div class="col-md-3"></div>
-
-</div>
+    <div class="col-md-2"></div>
 </div>
 <% include ./comunes/librerias.ejs %>
 <script>
