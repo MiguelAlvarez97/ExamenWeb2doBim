@@ -16,11 +16,11 @@ import {EventoModule} from "./evento/evento.module";
       TypeOrmModule.forRoot(
           {
               type: 'mysql',
-              host: '192.168.99.100',
-              port: 32791,
+              host: 'localhost',
+              port: 32775,
               database: 'entrenador',
               username: 'examen',
-              password: '123456',
+              password: '12345678',
               synchronize: true,
               dropSchema: false,
                 entities:[
